@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dba55pdy5ohl5"]
+
+[ext_resource type="Script" uid="uid://cmd3mel7wlygo" path="res://Game/ZoneDie/zonedie.gd" id="1_hcoip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stbht"]
+size = Vector2(68, 132)
+
+[node name="zonedie" type="Area2D"]
+script = ExtResource("1_hcoip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_stbht")
+debug_color = Color(0.7969378, 7.7779296e-05, 0.6384148, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
