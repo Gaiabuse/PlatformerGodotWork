@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://diaj5mndidm8m"]
+[gd_scene load_steps=13 format=4 uid="uid://diaj5mndidm8m"]
 
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="2_48rmt"]
 [ext_resource type="Texture2D" uid="uid://dn01svcy14aiv" path="res://Assets/Default/tile_brick.png" id="2_130pt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://busp76i8ga87" path="res://Assets/Default/tile.png" id="4_igjnt"]
 [ext_resource type="PackedScene" uid="uid://mr76owxq6swr" path="res://Plateforme/MovablePlatform/movablePlatform.tscn" id="5_eynu4"]
 [ext_resource type="PackedScene" uid="uid://lp454xjcvc3m" path="res://Plateforme/BreakablePlatform/BreakablePlatform.tscn" id="6_igjnt"]
+[ext_resource type="PackedScene" uid="uid://bir324o0vbwfn" path="res://Game/ennemies/basic_ennemy/ennemy.tscn" id="8_5sk61"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6d18"]
 texture = ExtResource("2_130pt")
@@ -52,7 +53,7 @@ sources/2 = SubResource("TileSetAtlasSource_dwb31")
 [node name="miniworld" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_48rmt")]
-position = Vector2(587, 378)
+position = Vector2(586, 378)
 collision_mask = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -79,4 +80,9 @@ axe = "y"
 
 [node name="Spike" parent="." instance=ExtResource("2_eynu4")]
 position = Vector2(747, 454)
-height = -30.0
+
+[node name="Ennemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_5sk61")]
+position = Vector2(1465, 409)
+player = NodePath("../Player")
+speed = 1
+max_health = 1

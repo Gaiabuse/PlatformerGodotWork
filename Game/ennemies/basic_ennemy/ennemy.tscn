@@ -9,15 +9,17 @@ size = Vector2(39, 61)
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 184.39088
 
-[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite") groups=["ennemies"]]
+collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_a8sfv")
 sprite = NodePath("Sprite")
+max_health = 100
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_bhke5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["ennemies"]]
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_ct4mp")
 

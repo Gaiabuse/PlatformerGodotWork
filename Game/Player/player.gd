@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 @export var max_health: int
 @export var anchor: Node2D
 @export var epee_scene: PackedScene
-var epee: StaticBody2D
+var epee: Sword
 var _is_dead: bool = false
 var epee_instantiate: bool = false
 
@@ -53,4 +53,14 @@ func take_damage(damage:int):
 		die()
 	
 func teleport_to_checkpoint():
-	global_position = CheckpointVar.checkpoint
+	global_position = checkpoint_var.checkpoint
+	
+func instantiate_epee() -> void:
+	if epee_instantiate:
+		return
+	print("instancier")
+	epee = epee_scene.instantiate()
+	add_child(epee)
+	epee.global_position = anchor.global_position
+
+	epee_instantiate = true
