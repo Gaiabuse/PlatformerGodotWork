@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-
+signal lost_life
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @export var camera: Camera2D
@@ -41,6 +41,7 @@ func die():
 	
 func take_damage(damage:int):
 	_health = max(0, _health - damage)
+	lost_life.emit()
 	if _health == 0:
 		die()
 	

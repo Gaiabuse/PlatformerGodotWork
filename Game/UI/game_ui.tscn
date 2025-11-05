@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://yy8mavf8mbhy"]
+
+[ext_resource type="Script" uid="uid://euopy0kd6mb1" path="res://Game/UI/ui.gd" id="1_gihcu"]
+
+[node name="game_ui" type="Control" node_paths=PackedStringArray("empty_heart", "full_heart")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gihcu")
+empty_heart = NodePath("Empty Heart")
+full_heart = NodePath("Full Heart")
+
+[node name="Empty Heart" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5
+
+[node name="Full Heart" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5

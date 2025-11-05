@@ -7,7 +7,7 @@
 size = Vector2(39, 61)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
-radius = 199.01006
+radius = 332.006
 
 [node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 collision_mask = 3

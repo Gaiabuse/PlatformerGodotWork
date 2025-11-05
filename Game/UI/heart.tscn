@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bplyekg0ss2hb"]
+
+[ext_resource type="Texture2D" uid="uid://dvnn7kgufshv4" path="res://Assets/Default/tile_heart.png" id="1_ayw0x"]
+
+[node name="Black heart" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ayw0x")

@@ -1,21 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bir324o0vbwfn"]
+[gd_scene load_steps=5 format=3 uid="uid://ds8opa3j2palc"]
 
-[ext_resource type="Script" uid="uid://c00bhi0dpfvnf" path="res://Game/ennemies/basic_ennemy/enemy.gd" id="1_a8sfv"]
-[ext_resource type="Texture2D" uid="uid://n7r62jiqfxj8" path="res://Assets/Default/character_squareYellow.png" id="2_bhke5"]
+[ext_resource type="Script" uid="uid://cychmscucdm03" path="res://Game/ennemies/flying_ennemy_top_down/flying_enemy_top_down.gd" id="1_w4mh3"]
+[ext_resource type="Texture2D" uid="uid://cyn38oabi7ipa" path="res://Assets/Default/character_roundYellow.png" id="2_efyhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
 size = Vector2(39, 61)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
-radius = 339.14746
+radius = 326.02454
 
 [node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 collision_mask = 3
-script = ExtResource("1_a8sfv")
+script = ExtResource("1_w4mh3")
 sprite = NodePath("Sprite")
+speed = 5
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_bhke5")
+texture = ExtResource("2_efyhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1.5)

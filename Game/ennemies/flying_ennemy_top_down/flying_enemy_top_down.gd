@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var sprite: Sprite2D
 @export var speed: int = 100
 var player: Player
@@ -18,28 +17,24 @@ var _health: int:
 
 func _ready() -> void:
 	_health = max_health
-	limiteA=position.x-limiteA
-	limiteB+=position.x
-	
+	limiteA+=position.y
+	limiteB=position.y-limiteB
+
 func _physics_process(delta: float) -> void:
-	if position.x < limiteA:
+	if position.y > limiteA:
 		target_position = Vector2(limiteB, 0)
-		sprite.scale.x = 1
-	elif position.x > limiteB:
+		sprite.scale.y = 1
+	elif position.y < limiteB:
 		target_position = Vector2(limiteA, 0)
-		sprite.scale.x = -1
+		sprite.scale.y = -1
 	
 	var target_direction: Vector2 = Vector2(global_position.direction_to(target_position).x,0)
 	if player:
-		target_direction = Vector2(global_position.direction_to(player.global_position).x,0)
-	
+		target_direction = Vector2(global_position.direction_to(player.global_position))
 	direction = lerp(direction, target_direction, delta)
 	velocity = direction * speed
 	
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
-	velocity *= 50	
+	velocity *= 50
 	move_and_slide()
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision:
@@ -60,7 +55,7 @@ func die():
 		return
 	_is_dead = true
 	queue_free()
-	
+
 func take_damage(damage:int):
 	_health = max(0, _health - damage)
 	if _health == 0:

@@ -1,14 +1,13 @@
 extends CharacterBody2D
 
-@export var player: Node2D
 @export var sprite: Sprite2D
 @export var speed: int = 100
+var player: Player
 var health: int
 var direction: Vector2 = Vector2.ZERO
 @export var limiteA: int 
 @export var limiteB: int
 var target_position: Vector2 = Vector2.ZERO
-var player_targeting: bool = false
 @export var max_health: int
 var _is_dead: bool = false
 
@@ -18,6 +17,8 @@ var _health: int:
 
 func _ready() -> void:
 	_health = max_health
+	limiteA=position.x-limiteA
+	limiteB+=position.x
 
 func _physics_process(delta: float) -> void:
 	if position.x < limiteA:
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		sprite.scale.x = -1
 	
 	var target_direction: Vector2 = Vector2(global_position.direction_to(target_position).x,0)
-	if player_targeting:
+	if player:
 		target_direction = Vector2(global_position.direction_to(player.global_position))
 	direction = lerp(direction, target_direction, delta)
 	velocity = direction * speed
@@ -39,15 +40,15 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		var collider = collision.get_collider()
 		if collider is Player:
-			player.take_damage(1)
+			collider.take_damage(1)
 
 func _on_sight_area_body_entered(body: Node2D) -> void:
-	if body == player:
-		player_targeting = true
+	if body is Player:
+		player = body
 
 func _on_sight_area_body_exited(body: Node2D) -> void:
-	if body == player:
-		player_targeting = false
+	if body is Player:
+		player = null
 
 func die():
 	if _is_dead:
