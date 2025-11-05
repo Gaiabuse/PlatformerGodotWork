@@ -1,27 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://bir324o0vbwfn"]
+[gd_scene load_steps=5 format=3 uid="uid://b3mbfykx636c0"]
 
-[ext_resource type="Script" uid="uid://c00bhi0dpfvnf" path="res://scripts/enemy.gd" id="1_a8sfv"]
-[ext_resource type="Texture2D" uid="uid://d8d6dkwaf2nf" path="res://Assets/Default/character_squarePurple.png" id="2_fvtld"]
+[ext_resource type="Script" uid="uid://bkgulckthta78" path="res://Game/ennemies/flying_ennemy/flying_enemy.gd" id="1_78gdf"]
+[ext_resource type="Texture2D" uid="uid://cyn38oabi7ipa" path="res://Assets/Default/character_roundYellow.png" id="2_ppgq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
 size = Vector2(39, 61)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
-radius = 305.05902
+radius = 188.67963
 
 [node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
-script = ExtResource("1_a8sfv")
+collision_mask = 3
+script = ExtResource("1_78gdf")
 sprite = NodePath("Sprite")
+speed = 5
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_fvtld")
+texture = ExtResource("2_ppgq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_ct4mp")
 
 [node name="SightArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
 shape = SubResource("CircleShape2D_hjaqi")
