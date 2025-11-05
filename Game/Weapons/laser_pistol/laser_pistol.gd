@@ -1,4 +1,4 @@
-extends Node2D
+class_name Pistol extends Node2D
 @export_group("References")
 @export var anchor: Node2D
 @export var bulletScene: PackedScene
@@ -17,16 +17,16 @@ func _physics_process(delta: float) -> void:
 	var rotation = get_global_mouse_position()
 	rotation.x = global_position.x +100
 	anchor.look_at(rotation)
-	if (Input.is_action_just_pressed("shoot")):
+	if (Input.is_action_just_pressed("attack")):
 		_shoot()
 
 func _shoot() -> void:
 	if (_canShoot && inventory_manager.bullet_number >0):
 		CoolDown.start()
 		var projectile: StaticBody2D = bulletScene.instantiate()
+		owner.add_child(projectile)
 		projectile.global_position = marker.global_position
 		projectile.global_rotation = anchor.global_rotation
-		owner.add_child(projectile)
 		inventory_manager.bullet_number -=1
 		_canShoot = false
 

@@ -81,7 +81,7 @@ axe = "y"
 [node name="Spike" parent="." instance=ExtResource("2_eynu4")]
 position = Vector2(747, 454)
 
-[node name="Ennemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_5sk61")]
+[node name="Ennemy" parent="." node_paths=PackedStringArray("player") groups=["ennemies"] instance=ExtResource("8_5sk61")]
 position = Vector2(1465, 409)
 player = NodePath("../Player")
 speed = 1
