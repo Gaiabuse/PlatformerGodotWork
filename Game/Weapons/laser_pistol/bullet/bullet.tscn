@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://i6pyrv7gdsnj"]
+
+[ext_resource type="Script" uid="uid://bmxwa4sd7bj1t" path="res://Game/Weapons/laser_pistol/bullet/bullet.gd" id="1_4ppdm"]
+[ext_resource type="Texture2D" uid="uid://da8amnc30y71v" path="res://Assets/Default/character_handPurple.png" id="2_na2l3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aeag1"]
+radius = 8.0
+
+[node name="Bullet" type="StaticBody2D"]
+collision_mask = 6
+script = ExtResource("1_4ppdm")
+
+[node name="visual" type="Sprite2D" parent="."]
+texture = ExtResource("2_na2l3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_aeag1")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

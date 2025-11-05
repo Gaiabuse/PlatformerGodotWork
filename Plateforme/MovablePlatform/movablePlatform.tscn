@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k0lb"]
 size = Vector2(250, 60)
 
-[node name="MovablePlatform" type="AnimatableBody2D"]
+[node name="MovablePlatform" type="AnimatableBody2D" groups=["obstacles"]]
 texture_filter = 2
 texture_repeat = 2
 collision_layer = 2
