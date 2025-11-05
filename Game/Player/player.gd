@@ -32,15 +32,20 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+	if Input.is_action_pressed("test_checkpoint"):
+		teleport_to_checkpoint()
+	
 func die():
 	if _is_dead:
 		return
 		
 	_is_dead = true
-	queue_free()
+	teleport_to_checkpoint()
 	
 func take_damage(damage:int):
 	_health = max(0, _health - damage)
 	if _health == 0:
 		die()
 	
+func teleport_to_checkpoint():
+	global_position = CheckpointVar.checkpoint

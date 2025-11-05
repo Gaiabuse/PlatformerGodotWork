@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-checkpointVar="*res://Game/checkpoint/checkpoint_var.gd"
+CheckpointVar="*res://Game/checkpoint/checkpoint_var.gd"
 
 [input]
 
