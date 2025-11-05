@@ -9,11 +9,13 @@ size = Vector2(39, 61)
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 188.67963
 
-[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "timer") groups=["enemies"]]
+collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_78gdf")
 sprite = NodePath("Sprite")
 speed = 5
+timer = NodePath("Timer")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_ppgq4")
@@ -27,5 +29,8 @@ shape = SubResource("RectangleShape2D_ct4mp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
 shape = SubResource("CircleShape2D_hjaqi")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="SightArea" to="." method="_on_sight_area_body_entered"]
 [connection signal="body_exited" from="SightArea" to="." method="_on_sight_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

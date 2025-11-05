@@ -20,8 +20,12 @@ func _physics_process(delta: float) -> void:
 		var collider: Node2D = collision.get_collider() 
 		if collider.is_in_group("obstacles"):
 			queue_free()
-		"""elif collider.is_in_group("enemies"):
-			collider.take_damage(damage)"""
+		elif collider.is_in_group("enemies"):
+			if(collider.has_method("take_damage")):
+				collider.take_damage(damage)
+				queue_free()
+			else:
+				print("il faut une fonction take_damage")
 		
 
 
