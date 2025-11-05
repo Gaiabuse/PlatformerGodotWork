@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cldaeucw27s8w"]
+
+[ext_resource type="Script" uid="uid://ijsatncfapqb" path="res://Game/ennemies/stupid_ennemy/stupid_enemy.gd" id="1_3t2w6"]
+[ext_resource type="Texture2D" uid="uid://d8d6dkwaf2nf" path="res://Assets/Default/character_squarePurple.png" id="2_qeklu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
+size = Vector2(39, 61)
+
+[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+collision_mask = 3
+script = ExtResource("1_3t2w6")
+sprite = NodePath("Sprite")
+speed = 10
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_qeklu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_ct4mp")

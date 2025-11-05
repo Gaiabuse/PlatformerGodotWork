@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmj0ug2boe8jf"]
+
+[ext_resource type="Texture2D" uid="uid://cqw28ixkljdki" path="res://Assets/Default/tile_spikes.png" id="1_1hub7"]
+[ext_resource type="Script" uid="uid://wyeh8uo6g3no" path="res://Plateforme/Spike/spike.gd" id="1_wsubo"]
+[ext_resource type="Script" uid="uid://dn7stsshgeccr" path="res://Plateforme/Spike/spike_damage.gd" id="3_78t4g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsubo"]
+size = Vector2(97, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78t4g"]
+size = Vector2(105, 32)
+
+[node name="Spike" type="StaticBody2D" node_paths=PackedStringArray("spike_out_timer", "spike_in_timer", "cooldown") groups=["obstacles"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_wsubo")
+spike_out_timer = NodePath("SpikeOutTimer")
+spike_in_timer = NodePath("SpikeInTimer")
+cooldown = NodePath("Area2D/cooldown")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_1hub7")
+region_enabled = true
+region_rect = Rect2(-33.363525, 25.614273, 97.67096, 38.385727)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_wsubo")
+
+[node name="SpikeOutTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="SpikeInTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("spike")]
+collision_layer = 2
+script = ExtResource("3_78t4g")
+spike = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_78t4g")
+debug_color = Color(0.8039216, 0.2509804, 0.827451, 0.21176471)
+
+[node name="cooldown" type="Timer" parent="Area2D"]
+one_shot = true
+
+[connection signal="timeout" from="SpikeOutTimer" to="." method="_on_spike_out_timer_timeout"]
+[connection signal="timeout" from="SpikeInTimer" to="." method="_on_spike_in_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D/cooldown" to="Area2D" method="_on_cooldown_timeout"]
