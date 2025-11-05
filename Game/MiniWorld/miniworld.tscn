@@ -78,5 +78,5 @@ distance = 500.0
 axe = "y"
 
 [node name="Spike" parent="." instance=ExtResource("2_eynu4")]
-position = Vector2(747, 420)
-height = -2.0
+position = Vector2(747, 454)
+height = -30.0

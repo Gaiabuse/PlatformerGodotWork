@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjtov1tfngsfm"]
+
+[ext_resource type="Texture2D" uid="uid://hbqqjy31jjgx" path="res://Assets/Default/item_blaster.png" id="1_jm3tx"]
+[ext_resource type="Script" uid="uid://d1ry864omwonf" path="res://Game/Weapons/laser_pistol/laser_pistol.gd" id="1_w77n0"]
+[ext_resource type="PackedScene" uid="uid://i6pyrv7gdsnj" path="res://Game/Weapons/laser_pistol/bullet/bullet.tscn" id="2_bggnr"]
+
+[node name="LaserPistol" type="Node2D" node_paths=PackedStringArray("anchor", "CoolDown", "marker")]
+script = ExtResource("1_w77n0")
+anchor = NodePath("anchor")
+bulletScene = ExtResource("2_bggnr")
+CoolDown = NodePath("Cooldown")
+marker = NodePath("anchor/visual/Marker2D")
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="anchor" type="Node2D" parent="."]
+
+[node name="visual" type="Sprite2D" parent="anchor"]
+texture = ExtResource("1_jm3tx")
+
+[node name="Marker2D" type="Marker2D" parent="anchor/visual"]
+position = Vector2(20, -3)
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
