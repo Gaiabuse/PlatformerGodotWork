@@ -20,3 +20,5 @@ func attack() -> void:
 	$SwordAnimation.play("sword_attack")
 	$WeaponAudio.play()
 	monitoring = true
+	await $SwordAnimation.animation_finished
+	monitoring = false
