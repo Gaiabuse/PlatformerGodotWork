@@ -1,6 +1,6 @@
 extends Area2D
 @export var animation : AnimationPlayer
-
+var obtained_bullet
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,4 +12,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if obtained_bullet : return
+	inventory_manager.bullet_number +=1
+	animation.play("obtained")
+	await animation.animation_finished
+	queue_free()
+	

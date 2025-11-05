@@ -5,11 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://i6pyrv7gdsnj" path="res://Game/Weapons/laser_pistol/bullet/bullet.tscn" id="2_bggnr"]
 
 [node name="LaserPistol" type="Node2D" node_paths=PackedStringArray("anchor", "CoolDown", "marker")]
+position = Vector2(25, 0)
 script = ExtResource("1_w77n0")
 anchor = NodePath("anchor")
 bulletScene = ExtResource("2_bggnr")
 CoolDown = NodePath("Cooldown")
 marker = NodePath("anchor/visual/Marker2D")
+metadata/_custom_type_script = "uid://d1ry864omwonf"
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 0.3

@@ -9,6 +9,8 @@ var direction: Vector2 = Vector2.ZERO
 var target_position: Vector2 = Vector2.ZERO
 @export var max_health: int
 var _is_dead: bool = false
+var _is_attack : bool = false
+@export var timer : Timer
 
 var _health: int:
 	set(value):
@@ -39,8 +41,11 @@ func _physics_process(delta: float) -> void:
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision:
 		var collider = collision.get_collider()
-		if collider is Player:
+		if collider.is_in_group("player") and !_is_attack:
+			print("take_damage")
 			collider.take_damage(1)
+			_is_attack = true
+			timer.start()
 
 func die():
 	if _is_dead:
@@ -52,3 +57,7 @@ func take_damage(damage:int):
 	_health = max(0, _health - damage)
 	if _health == 0:
 		die()
+
+
+func _on_timer_timeout() -> void:
+	_is_attack = false # Replace with function body.
