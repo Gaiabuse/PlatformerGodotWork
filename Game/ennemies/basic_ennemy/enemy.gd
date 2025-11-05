@@ -22,8 +22,6 @@ func _ready() -> void:
 	_health = max_health
 	limiteA=position.x-limiteA
 	limiteB+=position.x
-	limiteA = position.x-limiteA
-	limiteB += position.x
 	
 func _physics_process(delta: float) -> void:
 	if position.x < limiteA:
@@ -50,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		var collider = collision.get_collider()
 		if collider.is_in_group("player") and !_is_attack:
 			print("take_damage")
-			player.take_damage(1)
+			collider.take_damage(1)
 			_is_attack = true
 			timer.start()
 
@@ -73,6 +71,5 @@ func take_damage(damage:int):
 	if _health == 0:
 		die()
 
-
 func _on_timer_timeout() -> void:
-	_is_attack = false # Replace with function body.
+	_is_attack = false
