@@ -1,36 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://b02awebktuq7f"]
+[gd_scene load_steps=5 format=3 uid="uid://bir324o0vbwfn"]
 
-[ext_resource type="Script" uid="uid://be4p3m085ngna" path="res://scripts/enemy_armed.gd" id="1_jkixm"]
-[ext_resource type="Texture2D" uid="uid://d8d6dkwaf2nf" path="res://Assets/Default/character_squarePurple.png" id="2_jkixm"]
-[ext_resource type="Texture2D" uid="uid://hbqqjy31jjgx" path="res://Assets/Default/item_blaster.png" id="3_jkixm"]
+[ext_resource type="Script" uid="uid://c00bhi0dpfvnf" path="res://Game/ennemies/basic_ennemy/enemy.gd" id="1_a8sfv"]
+[ext_resource type="Texture2D" uid="uid://n7r62jiqfxj8" path="res://Assets/Default/character_squareYellow.png" id="2_bhke5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
 size = Vector2(39, 61)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
-radius = 305.05902
+radius = 184.39088
 
 [node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
-script = ExtResource("1_jkixm")
-sprite = NodePath("Sprite2D")
+collision_mask = 3
+script = ExtResource("1_a8sfv")
+sprite = NodePath("Sprite")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_jkixm")
+texture = ExtResource("2_bhke5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_ct4mp")
 
 [node name="SightArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
 shape = SubResource("CircleShape2D_hjaqi")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(35, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_jkixm")
 
 [connection signal="body_entered" from="SightArea" to="." method="_on_sight_area_body_entered"]
 [connection signal="body_exited" from="SightArea" to="." method="_on_sight_area_body_exited"]

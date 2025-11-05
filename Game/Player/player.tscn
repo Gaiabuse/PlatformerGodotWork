@@ -7,7 +7,7 @@
 radius = 19.0
 height = 60.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera") groups=["player"]]
 script = ExtResource("1_s3asc")
 camera = NodePath("Camera2D")
 metadata/_custom_type_script = "uid://bxc44824lcx63"
