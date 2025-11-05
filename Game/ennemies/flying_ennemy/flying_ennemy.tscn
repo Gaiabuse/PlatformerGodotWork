@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cyn38oabi7ipa" path="res://Assets/Default/character_roundYellow.png" id="2_ppgq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
-size = Vector2(39, 61)
+size = Vector2(39, 62)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 188.67963
@@ -21,7 +21,7 @@ timer = NodePath("Timer")
 texture = ExtResource("2_ppgq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -1.5)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_ct4mp")
 
 [node name="SightArea" type="Area2D" parent="."]

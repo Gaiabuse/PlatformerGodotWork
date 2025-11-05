@@ -20,6 +20,8 @@ var _health: int:
 
 func _ready() -> void:
 	_health = max_health
+	limiteA = position.x-limiteA
+	limiteB += position.x
 
 func _physics_process(delta: float) -> void:
 	if position.x < limiteA:

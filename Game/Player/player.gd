@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if Input.is_action_pressed("test_checkpoint"):
+	if Input.is_action_just_pressed("test_checkpoint"):
 		teleport_to_checkpoint()
 		
 	if Input.is_action_just_pressed("switch_weapon"):
@@ -51,7 +51,7 @@ func die():
 		return
 
 	_is_dead = true
-	teleport_to_checkpoint()
+	queue_free()
 	
 func take_damage(damage:int):
 	_health = max(0, _health - damage)

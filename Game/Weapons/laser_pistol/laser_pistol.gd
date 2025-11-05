@@ -31,6 +31,5 @@ func _shoot() -> void:
 		_canShoot = false
 
 
-
 func _on_cooldown_timeout() -> void:
 	_canShoot = true # Replace with function body.

@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bjtov1tfngsfm" path="res://Game/Weapons/laser_pistol/laser_pistol.tscn" id="3_segth"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s3asc"]
-radius = 19.0
-height = 60.0
+radius = 21.0
+height = 64.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "anchor")]
 script = ExtResource("1_s3asc")
