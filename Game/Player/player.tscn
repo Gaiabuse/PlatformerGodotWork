@@ -10,6 +10,7 @@ height = 60.0
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_s3asc")
 camera = NodePath("Camera2D")
+metadata/_custom_type_script = "uid://bxc44824lcx63"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_m57qa")
