@@ -3,6 +3,7 @@ class_name enemy extends CharacterBody2D
 
 @export var sprite: Sprite2D
 @export var speed: int = 100
+var normalSpeed: int
 var player: Player
 var health: int
 var direction: Vector2 = Vector2.ZERO
@@ -11,8 +12,8 @@ var direction: Vector2 = Vector2.ZERO
 var target_position: Vector2 = Vector2.ZERO
 @export var max_health: int
 var _is_dead: bool = false
-var _is_attack : bool = false
 @export var timer : Timer
+var repousse: bool = false
 
 var _health: int:
 	set(value):
@@ -20,8 +21,9 @@ var _health: int:
 
 func _ready() -> void:
 	_health = max_health
-	limiteA=position.x-limiteA
-	limiteB+=position.x
+	normalSpeed = speed
+	limiteA = position.x - limiteA
+	limiteB += position.x
 	
 func _physics_process(delta: float) -> void:
 	if position.x < limiteA:
@@ -35,7 +37,11 @@ func _physics_process(delta: float) -> void:
 	if player:
 		target_direction = Vector2(global_position.direction_to(player.global_position).x,0)
 	
+	
 	direction = lerp(direction, target_direction, delta)
+	if repousse:
+		speed=1
+		direction = Vector2(-global_position.direction_to(player.global_position).x,0)
 	velocity = direction * speed
 	
 	if not is_on_floor():
@@ -43,14 +49,6 @@ func _physics_process(delta: float) -> void:
 	
 	velocity *= 50	
 	move_and_slide()
-	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
-	if collision:
-		var collider = collision.get_collider()
-		if collider.is_in_group("player") and !_is_attack:
-			print("take_damage")
-			collider.take_damage(1)
-			_is_attack = true
-			timer.start()
 
 func _on_sight_area_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -71,5 +69,14 @@ func take_damage(damage:int):
 	if _health == 0:
 		die()
 
-func _on_timer_timeout() -> void:
-	_is_attack = false
+func _on_collision_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		print("take_damage")
+		body.take_damage(1)
+		timer.start()
+		repousse = true
+
+func _on_collision_area_body_exited(body: Node2D) -> void:
+	if body is Player:
+		speed = normalSpeed
+		repousse = false

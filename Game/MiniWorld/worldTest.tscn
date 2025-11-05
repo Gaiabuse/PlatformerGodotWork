@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://civexcqc3y3ca"]
+[gd_scene load_steps=15 format=4 uid="uid://b5qs6x7ojw3wp"]
 
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_jsqj8"]
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_usgto"]
@@ -66,17 +66,15 @@ position = Vector2(48, 0)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Ennemy" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_1430a")]
+[node name="Ennemy" parent="Enemies" instance=ExtResource("8_1430a")]
 position = Vector2(1293, 405)
-player = NodePath("../../Player")
 speed = 2
-limiteA = 1103
-limiteB = 1481
+limiteA = 50
+limiteB = 50
 max_health = 1
 
-[node name="Ennemy2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("6_mp81a")]
+[node name="Ennemy2" parent="Enemies" instance=ExtResource("6_mp81a")]
 position = Vector2(2761, 267)
-player = NodePath("../../Player")
 limiteA = 2587
 limiteB = 2990
 
@@ -85,21 +83,18 @@ position = Vector2(3786, 410)
 limiteA = 4043
 limiteB = 3626
 
-[node name="Ennemy4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_8onjg")]
+[node name="Ennemy4" parent="Enemies" instance=ExtResource("8_8onjg")]
 position = Vector2(4954, 917)
-player = NodePath("../../Player")
 limiteA = 4941
 limiteB = 5147
 
-[node name="Ennemy5" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_8onjg")]
+[node name="Ennemy5" parent="Enemies" instance=ExtResource("8_8onjg")]
 position = Vector2(5305, 916)
-player = NodePath("../../Player")
 limiteA = 5515
 limiteB = 5134
 
-[node name="Ennemy6" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_8onjg")]
+[node name="Ennemy6" parent="Enemies" instance=ExtResource("8_8onjg")]
 position = Vector2(5628, 918)
-player = NodePath("../../Player")
 limiteA = 5459
 limiteB = 5766
 
