@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://mr76owxq6swr"]
+
+[ext_resource type="Texture2D" uid="uid://3ri71bqwllqt" path="res://Assets/Default/tile_diagonal.png" id="1_0i4fa"]
+[ext_resource type="Script" uid="uid://b3fv4o0v6gk2t" path="res://Plateforme/MovablePlatform/movable_platform.gd" id="1_sowia"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k0lb"]
+size = Vector2(250, 60)
+
+[node name="MovablePlatform" type="AnimatableBody2D"]
+texture_filter = 2
+texture_repeat = 2
+collision_layer = 2
+script = ExtResource("1_sowia")
+axe = "x"
+speed = 500.0
+
+[node name="TileDiagonal" type="Sprite2D" parent="."]
+texture = ExtResource("1_0i4fa")
+region_enabled = true
+region_rect = Rect2(-125, 0, 251.03, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_7k0lb")
