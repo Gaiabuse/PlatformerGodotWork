@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://lp454xjcvc3m"]
+[gd_scene load_steps=9 format=3 uid="uid://lp454xjcvc3m"]
 
 [ext_resource type="Texture2D" uid="uid://dn01svcy14aiv" path="res://Assets/Default/tile_brick.png" id="1_ii32j"]
 [ext_resource type="Script" uid="uid://m0kt7bdm3qyo" path="res://Plateforme/BreakablePlatform/breakable_platform.gd" id="1_tlpgo"]
@@ -9,8 +9,77 @@ size = Vector2(265, 61)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwpb"]
 size = Vector2(262, 98)
 
-[node name="BreakablePlatform" type="StaticBody2D"]
+[sub_resource type="Animation" id="Animation_tlpgo"]
+resource_name = "tremblement"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1.7411014, 1, 1.7411014, 1, 1.7411014, 1, 1.7411014, 1, 1.7411014, 1),
+"update": 0,
+"values": [0.0, -0.017453292519943295, 0.017453292519943295, -0.017453292519943295, 0.017453292519943295, -0.017453292519943295, 0.017453292519943295, -0.017453292519943295, 0.017453292519943295, -0.017453292519943295, 0.017453292519943295]
+}
+
+[sub_resource type="Animation" id="Animation_7lwpb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fgj66"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667),
+"transitions": PackedFloat32Array(1, 4.924576, 3.2490103),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqaof"]
+_data = {
+&"RESET": SubResource("Animation_7lwpb"),
+&"destroy": SubResource("Animation_fgj66"),
+&"tremblement": SubResource("Animation_tlpgo")
+}
+
+[node name="BreakablePlatform" type="StaticBody2D" node_paths=PackedStringArray("_cooldown", "animation")]
+collision_layer = 2
 script = ExtResource("1_tlpgo")
+_cooldown = NodePath("Timer")
+animation = NodePath("AnimationPlayer")
 
 [node name="TileDiagonal" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -23,6 +92,7 @@ position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_tlpgo")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -13)
@@ -30,6 +100,11 @@ shape = SubResource("RectangleShape2D_7lwpb")
 debug_color = Color(0.9529412, 0, 0.54901963, 0.06666667)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hqaof")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

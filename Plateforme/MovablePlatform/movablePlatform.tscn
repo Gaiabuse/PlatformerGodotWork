@@ -9,6 +9,7 @@ size = Vector2(250, 60)
 [node name="MovablePlatform" type="AnimatableBody2D"]
 texture_filter = 2
 texture_repeat = 2
+collision_layer = 2
 script = ExtResource("1_sowia")
 axe = "x"
 speed = 500.0
