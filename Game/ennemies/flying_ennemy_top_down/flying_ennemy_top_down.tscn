@@ -1,25 +1,92 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds8opa3j2palc"]
+[gd_scene load_steps=10 format=3 uid="uid://duse3o00hcps8"]
 
-[ext_resource type="Script" uid="uid://cychmscucdm03" path="res://Game/ennemies/flying_ennemy_top_down/flying_enemy_top_down.gd" id="1_w4mh3"]
+[ext_resource type="Script" uid="uid://clevsgy1rrvnm" path="res://Game/ennemies/flying_ennemy_top_down/flying_enemy_top_down.gd" id="1_l5nt4"]
 [ext_resource type="Texture2D" uid="uid://cyn38oabi7ipa" path="res://Assets/Default/character_roundYellow.png" id="2_efyhh"]
+[ext_resource type="Texture2D" uid="uid://8y3ealoib44w" path="res://Assets/Default/dying_character_roundYellow.png" id="3_nncw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
-size = Vector2(39, 61)
+size = Vector2(39, 62)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 326.02454
 
-[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
-collision_mask = 3
-script = ExtResource("1_w4mh3")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppgq4"]
+size = Vector2(45, 68)
+
+[sub_resource type="Animation" id="Animation_qtwfl"]
+resource_name = "died"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_efyhh"), ExtResource("3_nncw8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_c46p7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_efyhh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_76330"]
+_data = {
+&"RESET": SubResource("Animation_c46p7"),
+&"died": SubResource("Animation_qtwfl")
+}
+
+[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "timer") groups=["enemies"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_l5nt4")
 sprite = NodePath("Sprite")
-speed = 5
+speed = 10
+timer = NodePath("Timer")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_efyhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -1.5)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_ct4mp")
 
 [node name="SightArea" type="Area2D" parent="."]
@@ -27,5 +94,21 @@ shape = SubResource("RectangleShape2D_ct4mp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
 shape = SubResource("CircleShape2D_hjaqi")
 
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_ppgq4")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_76330")
+}
+
 [connection signal="body_entered" from="SightArea" to="." method="_on_sight_area_body_entered"]
 [connection signal="body_exited" from="SightArea" to="." method="_on_sight_area_body_exited"]
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]
+[connection signal="body_exited" from="CollisionArea" to="." method="_on_collision_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

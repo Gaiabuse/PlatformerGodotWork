@@ -19,10 +19,15 @@ config/icon="res://icon.svg"
 
 inventory_manager="*res://Game/Weapons/laser_pistol/Inventory/inventory_manager.gd"
 CheckpointVar="*res://Game/checkpoint/checkpoint_var.gd"
+LevelReload="*res://Game/Singleton/level_reload.gd"
+
+[display]
+
+mouse_cursor/custom_image="uid://ch8t17uvs2ms"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/Godot-Tween-Suite-dc5f32b0d699c93673be465ed728e57c5f873712/addons/TweenSuite/plugin.cfg")
 
 [global_group]
 
