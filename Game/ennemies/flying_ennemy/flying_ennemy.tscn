@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3mbfykx636c0"]
+[gd_scene load_steps=6 format=3 uid="uid://b3mbfykx636c0"]
 
 [ext_resource type="Script" uid="uid://bkgulckthta78" path="res://Game/ennemies/flying_ennemy/flying_enemy.gd" id="1_78gdf"]
 [ext_resource type="Texture2D" uid="uid://cyn38oabi7ipa" path="res://Assets/Default/character_roundYellow.png" id="2_ppgq4"]
@@ -9,12 +9,15 @@ size = Vector2(39, 62)
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
 radius = 326.02454
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppgq4"]
+size = Vector2(45, 68)
+
 [node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "timer") groups=["enemies"]]
 collision_layer = 8
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_78gdf")
 sprite = NodePath("Sprite")
-speed = 5
+speed = 10
 timer = NodePath("Timer")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -29,8 +32,16 @@ shape = SubResource("RectangleShape2D_ct4mp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
 shape = SubResource("CircleShape2D_hjaqi")
 
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_ppgq4")
+
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="SightArea" to="." method="_on_sight_area_body_entered"]
 [connection signal="body_exited" from="SightArea" to="." method="_on_sight_area_body_exited"]
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]
+[connection signal="body_exited" from="CollisionArea" to="." method="_on_collision_area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
