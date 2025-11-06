@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bvfed6y4cl7q5"]
+[gd_scene load_steps=20 format=4 uid="uid://d2u7hf7wpifj4"]
 
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_aidxx"]
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_et0dr"]
@@ -78,7 +78,7 @@ tile_map_data = PackedByteArray("AACJAPH/FAADAAAAAACFAPf/FAAFAAAAAAB3AP//FAACAAA
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="Player" parent="." instance=ExtResource("1_aidxx")]
-position = Vector2(585, 365)
+position = Vector2(489, 369)
 collision_mask = 2
 max_health = 3
 
@@ -92,19 +92,19 @@ tile_set = SubResource("TileSet_rr6q1")
 [node name="checkpoints" type="Node" parent="platform"]
 
 [node name="checkpoint" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(582, 299)
+position = Vector2(598, 415)
 
 [node name="checkpoint2" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(3789, 746.99994)
+position = Vector2(3803, 859)
 
 [node name="checkpoint3" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(6475, -211.99998)
+position = Vector2(6487, -97.999985)
 
 [node name="checkpoint4" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(9169, -659.99994)
+position = Vector2(9180, -551)
 
 [node name="checkpoint5" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(9860, 1709)
+position = Vector2(9857, 1817)
 
 [node name="Trap" type="Node" parent="platform"]
 
