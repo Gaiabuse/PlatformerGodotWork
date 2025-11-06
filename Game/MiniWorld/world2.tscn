@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bir324o0vbwfn" path="res://Game/ennemies/basic_ennemy/ennemy.tscn" id="10_u80xu"]
 [ext_resource type="PackedScene" uid="uid://bwdyp2g8e36o1" path="res://Game/ennemies/intelligent_ennemy/intelligent_ennemy.tscn" id="11_h254a"]
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="11_kg07x"]
-[ext_resource type="PackedScene" uid="uid://duse3o00hcps8" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="12_kg07x"]
+[ext_resource type="PackedScene" uid="uid://ds8opa3j2palc" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="12_kg07x"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_yoe77"]
 
 [sub_resource type="Gradient" id="Gradient_u80xu"]
@@ -76,7 +76,7 @@ tile_map_data = PackedByteArray("AACJAPH/FAADAAAAAACFAPf/FAAFAAAAAAB3AP//FAACAAA
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="Player" parent="." instance=ExtResource("1_aidxx")]
-position = Vector2(8879, 61)
+position = Vector2(573, 405)
 collision_mask = 2
 max_health = 3
 
