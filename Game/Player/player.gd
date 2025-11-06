@@ -87,8 +87,8 @@ func take_damage(damage: int) -> void:
 	var blink_interval := 0.1
 	var timer := 0.0
 
-	set_collision_layer_value(1, false) 
-	set_collision_mask_value(4, false) 
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(4, false)
 
 	while timer < blink_time:
 		visible = not visible
