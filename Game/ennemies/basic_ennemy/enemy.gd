@@ -14,7 +14,7 @@ var target_position: Vector2 = Vector2.ZERO
 var _is_dead: bool = false
 @export var timer : Timer
 var repousse: bool = false
-
+var isAttack : bool
 var _health: int:
 	set(value):
 		_health = value
@@ -24,6 +24,7 @@ func _ready() -> void:
 	normalSpeed = speed
 	limiteA = position.x - limiteA
 	limiteB += position.x
+	isAttack = false
 	
 func _physics_process(delta: float) -> void:
 	if position.x < limiteA:
@@ -70,13 +71,18 @@ func take_damage(damage:int):
 		die()
 
 func _on_collision_area_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body is Player and !isAttack:
 		print("take_damage")
 		body.take_damage(1)
 		timer.start()
 		repousse = true
+		isAttack = true
 
 func _on_collision_area_body_exited(body: Node2D) -> void:
 	if body is Player:
 		speed = normalSpeed
 		repousse = false
+
+
+func _on_timer_timeout() -> void:
+	isAttack = false # Replace with function body.
