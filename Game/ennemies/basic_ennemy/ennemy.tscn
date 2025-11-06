@@ -14,7 +14,7 @@ size = Vector2(49, 68)
 
 [node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "timer") groups=["enemies"]]
 collision_layer = 8
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_a8sfv")
 sprite = NodePath("Sprite")
 timer = NodePath("Timer")
