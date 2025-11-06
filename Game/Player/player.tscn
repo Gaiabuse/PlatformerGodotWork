@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu8q20n3uc28i"]
+[gd_scene load_steps=8 format=3 uid="uid://bu8q20n3uc28i"]
 
 [ext_resource type="Texture2D" uid="uid://cimjlwn7m4762" path="res://Assets/Default/character_roundRed.png" id="1_m57qa"]
 [ext_resource type="Script" uid="uid://bxc44824lcx63" path="res://Game/Player/player.gd" id="1_s3asc"]
 [ext_resource type="PackedScene" uid="uid://chc517cxir5ct" path="res://Game/Weapons/weapons.tscn" id="2_vytja"]
 [ext_resource type="Texture2D" uid="uid://cj1a4f3elrrpn" path="res://Assets/Default/character_handRed.png" id="3_letr6"]
 [ext_resource type="PackedScene" uid="uid://bjtov1tfngsfm" path="res://Game/Weapons/laser_pistol/laser_pistol.tscn" id="3_segth"]
+[ext_resource type="AudioStream" uid="uid://i4fh10l1gmic" path="res://Assets/Sound/plop-333525.mp3" id="6_p2hw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_segth"]
 size = Vector2(39, 61)
@@ -38,3 +39,6 @@ position_smoothing_enabled = true
 
 [node name="origin" type="Marker2D" parent="EpeeAnchor"]
 position = Vector2(25, 0)
+
+[node name="DiePlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_p2hw7")

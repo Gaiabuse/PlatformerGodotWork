@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bir324o0vbwfn"]
+[gd_scene load_steps=11 format=3 uid="uid://bir324o0vbwfn"]
 
 [ext_resource type="Script" uid="uid://c00bhi0dpfvnf" path="res://Game/ennemies/basic_ennemy/enemy.gd" id="1_a8sfv"]
 [ext_resource type="Texture2D" uid="uid://n7r62jiqfxj8" path="res://Assets/Default/character_squareYellow.png" id="2_bhke5"]
 [ext_resource type="Texture2D" uid="uid://cm2g7244ncp6u" path="res://Assets/Default/dying_character_squareYellow.png" id="3_en88q"]
+[ext_resource type="AudioStream" uid="uid://dhsa5uo5emhfh" path="res://Assets/Sound/pixel-death-66829.mp3" id="4_mh5vm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
 size = Vector2(39, 61)
@@ -12,6 +13,33 @@ radius = 339.14746
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhke5"]
 size = Vector2(49, 68)
+
+[sub_resource type="Animation" id="Animation_mvux8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_bhke5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_mh5vm"]
 resource_name = "died"
@@ -39,33 +67,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
-}
-
-[sub_resource type="Animation" id="Animation_mvux8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_bhke5")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lhm12"]
@@ -110,6 +111,9 @@ one_shot = true
 libraries = {
 &"": SubResource("AnimationLibrary_lhm12")
 }
+
+[node name="DieEnnemy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mh5vm")
 
 [connection signal="body_entered" from="SightArea" to="." method="_on_sight_area_body_entered"]
 [connection signal="body_exited" from="SightArea" to="." method="_on_sight_area_body_exited"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://6bhetbv0xkkx"]
+[gd_scene load_steps=5 format=3 uid="uid://6bhetbv0xkkx"]
 
 [ext_resource type="Script" uid="uid://b1guyjotj2akg" path="res://Game/checkpoint/checkpoint.gd" id="1_ef578"]
 [ext_resource type="Texture2D" uid="uid://c6i2sgaujswee" path="res://Assets/Retina/tile_flag.png" id="2_ef578"]
+[ext_resource type="AudioStream" uid="uid://biml532n2uxu6" path="res://Assets/Sound/checkpointsound.mp3" id="3_kgo00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_168e7"]
 size = Vector2(131, 130)
@@ -19,5 +20,8 @@ debug_color = Color(4.813075e-06, 0.6046543, 0.6702778, 0.47843137)
 position = Vector2(20, 138.09521)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_ef578")
+
+[node name="CheckpointSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kgo00")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
