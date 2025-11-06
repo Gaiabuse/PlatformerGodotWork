@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://civexcqc3y3ca"]
+[gd_scene load_steps=19 format=4 uid="uid://civexcqc3y3ca"]
 
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_jsqj8"]
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_usgto"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="12_kxk1n"]
 [ext_resource type="PackedScene" uid="uid://6bhetbv0xkkx" path="res://Game/checkpoint/checkpoint.tscn" id="12_r8sd5"]
 [ext_resource type="PackedScene" uid="uid://byyk1ebx13sqh" path="res://Game/doors/door.tscn" id="14_emq8h"]
+[ext_resource type="AudioStream" uid="uid://cudgrgod24vmy" path="res://Assets/Sound/Mission Impossible Flute Aedan.mp3" id="15_mhncn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsqj8"]
 texture = ExtResource("1_jsqj8")
@@ -69,7 +70,6 @@ max_health = 3
 [node name="Ennemy3" parent="Enemies" instance=ExtResource("8_1430a")]
 position = Vector2(3720, 405)
 speed = 15
-max_health = 1
 
 [node name="Ennemy2" parent="Enemies" instance=ExtResource("6_mp81a")]
 position = Vector2(2761, 274)
@@ -187,3 +187,8 @@ player = NodePath("../../Player")
 [node name="Door" parent="." instance=ExtResource("14_emq8h")]
 position = Vector2(8842, 406)
 next_level = "res://Game/MiniWorld/world2.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_mhncn")
+autoplay = true
+parameters/looping = true

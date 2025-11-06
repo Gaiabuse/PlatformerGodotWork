@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ds8opa3j2palc" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="12_kg07x"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_yoe77"]
 [ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="14_um3nv"]
+[ext_resource type="AudioStream" uid="uid://cudgrgod24vmy" path="res://Assets/Sound/Mission Impossible Flute Aedan.mp3" id="15_28ujw"]
 
 [sub_resource type="Gradient" id="Gradient_u80xu"]
 offsets = PackedFloat32Array(0, 0.90909094)
@@ -519,3 +520,8 @@ player = NodePath("../../Player")
 
 [node name="BulletOnField" parent="." instance=ExtResource("14_um3nv")]
 position = Vector2(785, 425)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_28ujw")
+autoplay = true
+parameters/looping = true
