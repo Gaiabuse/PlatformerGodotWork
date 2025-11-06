@@ -6,6 +6,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @export var camera: Camera2D
 @export var max_health: int
+@export var max_life: int
 @export var anchor: Node2D
 @export var epee_scene: PackedScene
 @export var laserpistol_scene: PackedScene
@@ -18,10 +19,12 @@ var is_right : bool
 var _health: int:
 	set(value):
 		_health = value
+var _life : int
 
 
 func _ready() -> void:
 	_health = max_health
+	_life = max_life
 	epee_instantiate = false
 	is_right = true
 	instantiate_epee()

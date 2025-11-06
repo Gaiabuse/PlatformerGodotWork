@@ -240,7 +240,7 @@ speed = 300.0
 position = Vector2(4076, -45)
 distance = 1021.0
 axe = "y"
-speed = 400.0
+speed = 600.0
 
 [node name="BreakablePlatform" parent="platform/special_platform" instance=ExtResource("6_kg07x")]
 position = Vector2(3307, 274)
@@ -332,48 +332,34 @@ speed = 300.0
 [node name="Ennemy" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(1523, 294)
 speed = 1
-limiteA = 500
-limiteB = 500
 
 [node name="Ennemy2" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(3660, 194)
 speed = 2
-limiteA = 150
-limiteB = 150
 
 [node name="Ennemy3" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(2955, 199)
 speed = 2
-limiteA = 150
-limiteB = 150
 
 [node name="Ennemy5" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(3336, 775)
 speed = 3
-limiteA = 300
-limiteB = 300
 
 [node name="Ennemy4" parent="platform/enemies" instance=ExtResource("11_h254a")]
 position = Vector2(3456, 501)
 speed = 3
-limiteA = 350
-limiteB = 350
 
 [node name="Ennemy6" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(4454, -150)
 speed = 3
-limiteB = 900
 
 [node name="Ennemy7" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(5354, -250)
 speed = 3
-limiteA = 900
 
 [node name="Ennemy8" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(7947, -495)
 speed = 1
-limiteA = 50
-limiteB = 50
 
 [node name="TileMapLayer" type="TileMapLayer" parent="platform" groups=["obstacles"]]
 position = Vector2(491, 370)
