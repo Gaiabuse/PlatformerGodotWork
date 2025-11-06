@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjmr4042sl7cx" path="res://Game/Weapons/weapons.gd" id="1_7mfnp"]
 [ext_resource type="Texture2D" uid="uid://cdvyggohm2too" path="res://Assets/Default/item_sword.png" id="1_tnsr6"]
-[ext_resource type="AudioStream" uid="uid://nowb0f0l4hrw" path="res://Assets/sword-slice-393847.mp3" id="3_ywf1w"]
+[ext_resource type="AudioStream" uid="uid://nowb0f0l4hrw" path="res://Assets/Sound/sword-slice-393847.mp3" id="3_ywf1w"]
 
 [sub_resource type="Animation" id="Animation_7mfnp"]
 length = 0.001
