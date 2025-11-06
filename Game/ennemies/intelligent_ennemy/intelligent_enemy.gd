@@ -104,7 +104,6 @@ func die():
 	if _is_dead:
 		return
 	$animation.play("died")
-	$DieIntelligentEnnemy.play()
 	$CollisionArea.set_deferred("monitoring", false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	_is_dead = true

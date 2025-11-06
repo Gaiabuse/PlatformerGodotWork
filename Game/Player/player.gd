@@ -85,7 +85,6 @@ func take_damage(damage: int) -> void:
 	can_take_damage = false
 	_health = max(0, _health - damage)
 	lost_health.emit()
-	$DiePlayer.play()
 
 	if _health == 0:
 		die()

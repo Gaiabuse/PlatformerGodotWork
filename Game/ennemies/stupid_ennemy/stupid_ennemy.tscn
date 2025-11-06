@@ -1,42 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cldaeucw27s8w"]
+[gd_scene load_steps=9 format=3 uid="uid://cldaeucw27s8w"]
 
 [ext_resource type="Script" uid="uid://ijsatncfapqb" path="res://Game/ennemies/stupid_ennemy/stupid_enemy.gd" id="1_3t2w6"]
 [ext_resource type="Texture2D" uid="uid://d8d6dkwaf2nf" path="res://Assets/Default/character_squarePurple.png" id="2_qeklu"]
 [ext_resource type="Texture2D" uid="uid://weoqbnuhsnlq" path="res://Assets/Default/dying_character_squarePurple.png" id="3_kqsnp"]
-[ext_resource type="AudioStream" uid="uid://dhsa5uo5emhfh" path="res://Assets/Sound/pixel-death-66829.mp3" id="4_i7su1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
 size = Vector2(39, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfxs1"]
 size = Vector2(44, 67)
-
-[sub_resource type="Animation" id="Animation_nnxhw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_qeklu")]
-}
 
 [sub_resource type="Animation" id="Animation_i7su1"]
 resource_name = "died"
@@ -64,6 +36,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("2_qeklu"), ExtResource("3_kqsnp")]
+}
+
+[sub_resource type="Animation" id="Animation_nnxhw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qeklu")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fmrnj"]
@@ -99,9 +98,6 @@ shape = SubResource("RectangleShape2D_nfxs1")
 libraries = {
 &"": SubResource("AnimationLibrary_fmrnj")
 }
-
-[node name="DieStupidEnnemy" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_i7su1")
 
 [connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]
 [connection signal="body_exited" from="CollisionArea" to="." method="_on_collision_area_body_exited"]

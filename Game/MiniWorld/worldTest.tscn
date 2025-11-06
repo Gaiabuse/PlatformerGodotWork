@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://civexcqc3y3ca"]
+[gd_scene load_steps=17 format=4 uid="uid://civexcqc3y3ca"]
 
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_jsqj8"]
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_usgto"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="11_8onjg"]
 [ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="12_kxk1n"]
 [ext_resource type="PackedScene" uid="uid://6bhetbv0xkkx" path="res://Game/checkpoint/checkpoint.tscn" id="12_r8sd5"]
-[ext_resource type="PackedScene" uid="uid://byyk1ebx13sqh" path="res://Game/doors/door.tscn" id="14_emq8h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsqj8"]
 texture = ExtResource("1_jsqj8")
@@ -183,7 +182,3 @@ offset_left = 10.0
 offset_top = 19.0
 offset_bottom = 48.0
 player = NodePath("../../Player")
-
-[node name="Door" parent="." instance=ExtResource("14_emq8h")]
-position = Vector2(8842, 406)
-next_level = "res://Game/MiniWorld/world2.tscn"

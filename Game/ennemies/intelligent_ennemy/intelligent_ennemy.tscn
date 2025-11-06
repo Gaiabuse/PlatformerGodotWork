@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwdyp2g8e36o1"]
+[gd_scene load_steps=10 format=3 uid="uid://bwdyp2g8e36o1"]
 
 [ext_resource type="Script" uid="uid://bavqtuaq5uvcg" path="res://Game/ennemies/intelligent_ennemy/intelligent_enemy.gd" id="1_ihx7f"]
 [ext_resource type="Texture2D" uid="uid://uk7yffkchn1o" path="res://Assets/Default/character_roundPurple.png" id="2_bb0w3"]
 [ext_resource type="Texture2D" uid="uid://bjiy3amye4iom" path="res://Assets/Default/dying_character_roundPurple.png" id="3_nfvdy"]
-[ext_resource type="AudioStream" uid="uid://dhsa5uo5emhfh" path="res://Assets/Sound/pixel-death-66829.mp3" id="4_pbfou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct4mp"]
 size = Vector2(39, 61)
@@ -13,33 +12,6 @@ radius = 332.006
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bb0w3"]
 size = Vector2(46, 67)
-
-[sub_resource type="Animation" id="Animation_xd880"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_bb0w3")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_pbfou"]
 resource_name = "died"
@@ -67,6 +39,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_xd880"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_bb0w3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5exy0"]
@@ -107,9 +106,6 @@ shape = SubResource("RectangleShape2D_bb0w3")
 libraries = {
 &"": SubResource("AnimationLibrary_5exy0")
 }
-
-[node name="DieIntelligentEnnemy" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_pbfou")
 
 [connection signal="body_entered" from="SightArea" to="." method="_on_sight_area_body_entered"]
 [connection signal="body_exited" from="SightArea" to="." method="_on_sight_area_body_exited"]
