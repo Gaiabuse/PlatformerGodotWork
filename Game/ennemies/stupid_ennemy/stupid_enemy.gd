@@ -93,7 +93,8 @@ func die():
 	if _is_dead:
 		return
 	$animation.play("died")
-	set_collision_layer_value(4, false)
+	$CollisionArea.set_deferred("monitoring", false)
+	$CollisionShape2D.set_deferred("disabled", true)
 	_is_dead = true
 	await  $animation.animation_finished
 	queue_free()
