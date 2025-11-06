@@ -28,6 +28,7 @@ func _shoot() -> void:
 		projectile.global_position = marker.global_position
 		projectile.global_rotation = anchor.global_rotation
 		inventory_manager.bullet_number -=1
+		inventory_manager.change_bullet_number.emit()
 		_canShoot = false
 
 

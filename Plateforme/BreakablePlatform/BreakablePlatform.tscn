@@ -76,6 +76,7 @@ _data = {
 }
 
 [node name="BreakablePlatform" type="StaticBody2D" node_paths=PackedStringArray("_cooldown", "animation")]
+physics_interpolation_mode = 2
 collision_layer = 2
 script = ExtResource("1_tlpgo")
 _cooldown = NodePath("Timer")

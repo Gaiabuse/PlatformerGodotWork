@@ -42,8 +42,11 @@ _data = {
 &"obtained": SubResource("Animation_v2u2a")
 }
 
-[node name="BulletOnField" type="Area2D"]
+[node name="BulletOnField" type="Area2D" node_paths=PackedStringArray("animation")]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource("1_x8xj5")
+animation = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_v2u2a")
