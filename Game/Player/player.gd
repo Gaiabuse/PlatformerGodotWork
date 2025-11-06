@@ -3,10 +3,13 @@ extends CharacterBody2D
 
 @export var camera: Camera2D
 @export var max_health: int
+@export var max_life:int = 5
 @export var anchor: Node2D
 @export var epee_scene: PackedScene
 @export var laserpistol_scene: PackedScene
+signal lost_health
 signal lost_life
+signal remove_health
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var epee: Sword
@@ -19,10 +22,14 @@ var _health: int:
 	set(value):
 		_health = value
 var can_take_damage: bool = true
+var _life: int
+var _start_pos:Vector2
 
 
 func _ready() -> void:
+	_start_pos = global_position
 	_health = max_health
+	_life = max_life
 	epee_instantiate = false
 	is_right = true
 	instantiate_epee()
@@ -64,7 +71,17 @@ func _physics_process(delta: float) -> void:
 
 
 func die():
-	teleport_to_checkpoint()
+	can_take_damage = true
+	if(_life >0):
+		_life -=1
+		lost_life.emit()
+		teleport_to_checkpoint()
+		_health = max_health
+		remove_health.emit()
+	else:
+		_health = max_health
+		remove_health.emit()
+		global_position = _start_pos
 	
 func take_damage(damage: int) -> void:
 	if not can_take_damage:
@@ -72,7 +89,7 @@ func take_damage(damage: int) -> void:
 
 	can_take_damage = false
 	_health = max(0, _health - damage)
-	lost_life.emit()
+	lost_health.emit()
 
 	if _health == 0:
 		die()
@@ -98,6 +115,7 @@ func take_damage(damage: int) -> void:
 
 func teleport_to_checkpoint():
 	global_position = CheckpointVar.checkpoint
+	_is_dead = false
 
 
 func instantiate_epee() -> void:

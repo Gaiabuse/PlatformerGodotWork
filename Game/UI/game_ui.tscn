@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://yy8mavf8mbhy"]
+[gd_scene load_steps=5 format=3 uid="uid://yy8mavf8mbhy"]
 
 [ext_resource type="Script" uid="uid://euopy0kd6mb1" path="res://Game/UI/ui.gd" id="1_gihcu"]
 [ext_resource type="Texture2D" uid="uid://da8amnc30y71v" path="res://Assets/Default/character_handPurple.png" id="2_x7r8r"]
+[ext_resource type="Texture2D" uid="uid://dvnn7kgufshv4" path="res://Assets/Default/tile_heart.png" id="3_gihcu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x7r8r"]
 font_size = 20
 font_color = Color(1.892, 1.892, 1.892, 1)
 
-[node name="game_ui" type="Control" node_paths=PackedStringArray("empty_heart", "full_heart", "number_of_bullet")]
+[node name="game_ui" type="Control" node_paths=PackedStringArray("empty_heart", "full_heart", "number_of_bullet", "number_of_life")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +19,7 @@ script = ExtResource("1_gihcu")
 empty_heart = NodePath("Empty Heart")
 full_heart = NodePath("Full Heart")
 number_of_bullet = NodePath("Label")
+number_of_life = NodePath("Label2")
 
 [node name="Empty Heart" type="GridContainer" parent="."]
 layout_mode = 0
@@ -39,12 +41,31 @@ offset_bottom = 122.0
 texture = ExtResource("2_x7r8r")
 expand_mode = 1
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1069.0
+offset_top = -1.0
+offset_right = 1111.0
+offset_bottom = 41.0
+texture = ExtResource("3_gihcu")
+expand_mode = 1
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 45.0
 offset_top = 69.0
 offset_right = 85.0
 offset_bottom = 128.0
+text = "25
+"
+label_settings = SubResource("LabelSettings_x7r8r")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1106.0
+offset_top = 6.0
+offset_right = 1146.0
+offset_bottom = 65.0
 text = "25
 "
 label_settings = SubResource("LabelSettings_x7r8r")
