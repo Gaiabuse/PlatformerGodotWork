@@ -66,6 +66,7 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	LevelReload.reload()
+	inventory_manager.bullet_number = inventory_manager.start_bullet_number
 	
 func take_damage(damage: int) -> void:
 	if not can_take_damage:
