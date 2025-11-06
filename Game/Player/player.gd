@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 @export var camera: Camera2D
 @export var max_health: int
-@export var max_life:int = 5
 @export var anchor: Node2D
 @export var epee_scene: PackedScene
 @export var laserpistol_scene: PackedScene
@@ -22,18 +21,20 @@ var _health: int:
 	set(value):
 		_health = value
 var can_take_damage: bool = true
-var _life: int
 var _start_pos:Vector2
 
 
 func _ready() -> void:
-	_start_pos = global_position
+	if(player_life.life <=0):
+		_start_pos = global_position
+		player_life.life = player_life.max_life
+		lost_life.emit()
+	else:
+		teleport_to_checkpoint()
 	_health = max_health
-	_life = max_life
 	epee_instantiate = false
 	is_right = true
 	instantiate_epee()
-	teleport_to_checkpoint()
 
 
 func _physics_process(delta: float) -> void:
@@ -72,12 +73,13 @@ func _physics_process(delta: float) -> void:
 
 
 func die():
+	player_life.life -=1
+	lost_life.emit()
 	LevelReload.reload()
 	
 func take_damage(damage: int) -> void:
 	if not can_take_damage:
 		return
-
 	can_take_damage = false
 	_health = max(0, _health - damage)
 	lost_health.emit()
