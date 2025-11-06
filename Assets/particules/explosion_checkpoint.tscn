@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://dksc6y8hkrfn3"]
+
+[ext_resource type="Texture2D" uid="uid://bjhegla8wuw3o" path="res://Assets/Default/effect_shot_90.png" id="1_axhqa"]
+[ext_resource type="Texture2D" uid="uid://b8lejb1vcsfm0" path="res://Assets/Default/effect_shotLarge_90.png" id="2_f8j2q"]
+
+[sub_resource type="GDScript" id="GDScript_axhqa"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$GPUParticles2D.emitting = true
+	$GPUParticles2D2.emitting = true
+"
+
+[sub_resource type="Gradient" id="Gradient_axhqa"]
+offsets = PackedFloat32Array(0, 0.07359307, 0.121212125, 0.20779221, 0.2900433, 0.37662336, 0.45887446, 0.5281385, 0.5930736, 0.66233766, 0.72727275, 0.8008658, 0.85281384, 0.9177489, 0.969697)
+colors = PackedColorArray(0.98039216, 0.15686275, 0, 1, 0.5357838, 0.65214485, 0.62583154, 1, 0.06666667, 0.08235294, 0.64705884, 1, 0.5224281, 0.9676928, 0, 1, 1, 0, 1, 1, 0.5673325, 0.60782427, 0.6512605, 1, 0, 0.72938854, 0.57073915, 1, 0.2627451, 0, 0.95686275, 1, 0.91898584, 0.67564356, 0.98038834, 1, 0.91764706, 0, 0.039215688, 1, 0, 0.972549, 1, 1, 0.39271837, 0.3771219, 0.1361008, 1, 0.9490196, 0.3764706, 0.13725491, 1, 0.14850971, 0.7038823, 0, 1, 0, 0.60639036, 0.9791681, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f8j2q"]
+gradient = SubResource("Gradient_axhqa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5oi6x"]
+lifetime_randomness = 0.5
+particle_flag_align_y = true
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+spread = 180.0
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 98, 0)
+linear_accel_min = 0.99999774
+linear_accel_max = 49.999996
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
+color_ramp = SubResource("GradientTexture1D_f8j2q")
+
+[sub_resource type="Gradient" id="Gradient_f8j2q"]
+offsets = PackedFloat32Array(0, 0.064935066, 0.14285715, 0.20779221, 0.27705628, 0.33766234, 0.38961038, 0.45454547, 0.54112554, 0.62770563, 0.72727275, 0.8008658, 0.86147183, 0.93073595, 1)
+colors = PackedColorArray(0.14850971, 0.7038823, 0, 1, 0, 0.60639036, 0.9791681, 1, 0.91898584, 0.67564356, 0.98038834, 1, 0.5224281, 0.9676928, 0, 1, 0.39271837, 0.3771219, 0.1361008, 1, 1, 0, 1, 1, 0.2627451, 0, 0.95686275, 1, 0, 0.72938854, 0.57073915, 1, 0.9490196, 0.3764706, 0.13725491, 1, 0.91764706, 0, 0.039215688, 1, 0, 0.972549, 1, 1, 0.06666667, 0.08235294, 0.64705884, 1, 0.5673325, 0.60782427, 0.6512605, 1, 0.98039216, 0.15686275, 0, 1, 0.5357838, 0.65214485, 0.62583154, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5oi6x"]
+gradient = SubResource("Gradient_f8j2q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x0o0v"]
+lifetime_randomness = 0.5
+particle_flag_align_y = true
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+spread = 180.0
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 98, 0)
+linear_accel_min = 0.99999774
+linear_accel_max = 49.999996
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
+color_ramp = SubResource("GradientTexture1D_5oi6x")
+
+[node name="ExplosionCheckpoint" type="Node2D"]
+script = SubResource("GDScript_axhqa")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 100
+texture = ExtResource("1_axhqa")
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_5oi6x")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 100
+texture = ExtResource("2_f8j2q")
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_x0o0v")
