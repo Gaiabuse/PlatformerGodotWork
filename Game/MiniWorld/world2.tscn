@@ -255,7 +255,7 @@ speed = 300.0
 [node name="MovablePlatform2" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(1948, 466)
 distance = -300.0
-speed = 300.0
+speed = 250.0
 
 [node name="MovablePlatform5" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(3114, 914)
