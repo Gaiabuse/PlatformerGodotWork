@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://d2u7hf7wpifj4"]
+[gd_scene load_steps=19 format=4 uid="uid://bvfed6y4cl7q5"]
 
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_aidxx"]
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_et0dr"]
@@ -13,10 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="11_kg07x"]
 [ext_resource type="PackedScene" uid="uid://ds8opa3j2palc" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="12_kg07x"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_yoe77"]
-[ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="14_um3nv"]
 
 [sub_resource type="Gradient" id="Gradient_u80xu"]
-offsets = PackedFloat32Array(0, 0.90909094)
+offsets = PackedFloat32Array(0, 0.6363636)
 colors = PackedColorArray(0, 0.7529412, 0.91764706, 1, 0.70980394, 0.91764706, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_h254a"]
@@ -65,7 +64,7 @@ tile_proxies/coords_level = [[12, Vector2i(0, 0)], [20, Vector2i(0, 0)], [12, Ve
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -1687.0
-offset_top = -1710.0
+offset_top = -1415.0
 offset_right = 11769.0
 offset_bottom = 2554.0
 texture = SubResource("GradientTexture2D_h254a")
@@ -73,11 +72,11 @@ expand_mode = 1
 
 [node name="EnvironmentBackGround" type="TileMapLayer" parent="."]
 position = Vector2(492, 375)
-tile_map_data = PackedByteArray("AACJAPH/FAADAAAAAACFAPf/FAAFAAAAAAB3AP//FAACAAAAAACAAP//FAADAAAAAAAiAPj/FAADAAAAAAAgAPj/FAANAAAAAAAeAPj/FAAEAAAAAAACAAAAFAAEAAAAAAAFAAAAFAACAAAAAABPAPj/FAAGAAEAAABPAPf/FAAGAAAAAAD+/wAAFAANAAAAAAA1APj/FAAGAAEAAAA1APf/FAAGAAAAAAD+//v/FAAAAAAAAAD///v/FAABAAAAAAADAPz/FAAAAAAAAAAEAPz/FAABAAAAAAAIAPr/FAAAAAAAAAAJAPr/FAABAAAAAAAMAPz/FAAAAAAAAAANAPz/FAABAAAAAAAPAPv/FAAAAAAAAAAQAPv/FAABAAAAAAAVAPv/FAAAAAAAAAAWAPv/FAABAAAAAAASAPj/FAAAAAAAAAATAPj/FAABAAAAAAAVAPX/FAAAAAAAAAAWAPX/FAABAAAAAAAcAPT/FAAAAAAAAAAdAPT/FAABAAAAAAAiAPP/FAAAAAAAAAAjAPP/FAABAAAAAAAlAPb/FAAAAAAAAAAmAPb/FAABAAAAAAAqAPP/FAAAAAAAAAArAPP/FAABAAAAAAAuAPT/FAAAAAAAAAAvAPT/FAABAAAAAAA0APP/FAAAAAAAAAA1APP/FAABAAAAAAA5APH/FAAAAAAAAAA6APH/FAABAAAAAAA+APT/FAAAAAAAAAA/APT/FAABAAAAAABDAPL/FAAAAAAAAABEAPL/FAABAAAAAABKAPD/FAAAAAAAAABLAPD/FAABAAAAAABPAPH/FAAAAAAAAABQAPH/FAABAAAAAABYAO//FAAAAAAAAABZAO//FAABAAAAAABgAO3/FAAAAAAAAABhAO3/FAABAAAAAABnAOr/FAAAAAAAAABoAOr/FAABAAAAAABbAOz/FAAAAAAAAABcAOz/FAABAAAAAAA1AAcAFAALAAAAAAD6//3/FAAAAAAAAAD7//3/FAABAAAAAAD5//n/FAAAAAAAAAD6//n/FAABAAAAAAABAPn/FAAAAAAAAAACAPn/FAABAAAAAAD2/wAAFAAAAAAAAAD3/wAAFAABAAAAAADz//z/FAAAAAAAAAD0//z/FAABAAAAAAD2//v/FAAAAAAAAAD3//v/FAABAAAAAAA5APX/FAAIAAAAAAA6APX/FAAJAAAAAAA=")
+tile_map_data = PackedByteArray("AACJAPH/FAADAAAAAACFAPf/FAAFAAAAAAB3AP//FAACAAAAAACAAP//FAADAAAAAABdAPj/FAADAAAAAAAiAPj/FAADAAAAAAAgAPj/FAANAAAAAAAeAPj/FAAEAAAAAAACAAAAFAAEAAAAAAAFAAAAFAACAAAAAABPAPj/FAAGAAEAAABPAPf/FAAGAAAAAAD+/wAAFAANAAAAAAA1APj/FAAGAAEAAAA1APf/FAAGAAAAAAD+//v/FAAAAAAAAAD///v/FAABAAAAAAADAPz/FAAAAAAAAAAEAPz/FAABAAAAAAAIAPr/FAAAAAAAAAAJAPr/FAABAAAAAAAMAPz/FAAAAAAAAAANAPz/FAABAAAAAAAPAPv/FAAAAAAAAAAQAPv/FAABAAAAAAAVAPv/FAAAAAAAAAAWAPv/FAABAAAAAAASAPj/FAAAAAAAAAATAPj/FAABAAAAAAAVAPX/FAAAAAAAAAAWAPX/FAABAAAAAAAcAPT/FAAAAAAAAAAdAPT/FAABAAAAAAAiAPP/FAAAAAAAAAAjAPP/FAABAAAAAAAlAPb/FAAAAAAAAAAmAPb/FAABAAAAAAAqAPP/FAAAAAAAAAArAPP/FAABAAAAAAAuAPT/FAAAAAAAAAAvAPT/FAABAAAAAAA0APP/FAAAAAAAAAA1APP/FAABAAAAAAA5APH/FAAAAAAAAAA6APH/FAABAAAAAAA+APT/FAAAAAAAAAA/APT/FAABAAAAAABDAPL/FAAAAAAAAABEAPL/FAABAAAAAABKAPD/FAAAAAAAAABLAPD/FAABAAAAAABPAPH/FAAAAAAAAABQAPH/FAABAAAAAABYAO//FAAAAAAAAABZAO//FAABAAAAAABgAO3/FAAAAAAAAABhAO3/FAABAAAAAABnAOr/FAAAAAAAAABoAOr/FAABAAAAAABbAOz/FAAAAAAAAABcAOz/FAABAAAAAAA1AAcAFAALAAAAAAD6//3/FAAAAAAAAAD7//3/FAABAAAAAAD5//n/FAAAAAAAAAD6//n/FAABAAAAAAABAPn/FAAAAAAAAAACAPn/FAABAAAAAAD2/wAAFAAAAAAAAAD3/wAAFAABAAAAAADz//z/FAAAAAAAAAD0//z/FAABAAAAAAD2//v/FAAAAAAAAAD3//v/FAABAAAAAAA5APX/FAAIAAAAAAA6APX/FAAJAAAAAAA=")
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="Player" parent="." instance=ExtResource("1_aidxx")]
-position = Vector2(489, 369)
+position = Vector2(585, 365)
 collision_mask = 2
 max_health = 3
 
@@ -87,23 +86,6 @@ tile_map_data = PackedByteArray("AAD+/wAAFAAGAAEAAAD+////FAAGAAAAAAADAAAAFAAHAAE
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="platform" type="Node" parent="."]
-
-[node name="checkpoints" type="Node" parent="platform"]
-
-[node name="checkpoint" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(598, 415)
-
-[node name="checkpoint2" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(3803, 859)
-
-[node name="checkpoint3" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(6487, -97.999985)
-
-[node name="checkpoint4" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(9180, -551)
-
-[node name="checkpoint5" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
-position = Vector2(9857, 1817)
 
 [node name="Trap" type="Node" parent="platform"]
 
@@ -246,6 +228,23 @@ speed = 1000.0
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.5
 
+[node name="checkpoints" type="Node" parent="platform"]
+
+[node name="checkpoint" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
+position = Vector2(586, 317)
+
+[node name="checkpoint2" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
+position = Vector2(3822, 753)
+
+[node name="checkpoint3" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
+position = Vector2(6472, -161)
+
+[node name="checkpoint4" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
+position = Vector2(9241, -653)
+
+[node name="checkpoint5" parent="platform/checkpoints" instance=ExtResource("5_4ox3k")]
+position = Vector2(9673, 1716)
+
 [node name="special_platform" type="Node" parent="platform" groups=["obstacles"]]
 
 [node name="MovablePlatform" parent="platform/special_platform" instance=ExtResource("5_h254a")]
@@ -256,7 +255,7 @@ speed = 300.0
 [node name="MovablePlatform2" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(1948, 466)
 distance = -300.0
-speed = 250.0
+speed = 300.0
 
 [node name="MovablePlatform5" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(3114, 914)
@@ -516,6 +515,3 @@ scale = Vector2(-175.59013, -85.383316)
 
 [node name="game_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("13_yoe77")]
 player = NodePath("../../Player")
-
-[node name="BulletOnField" parent="." instance=ExtResource("14_um3nv")]
-position = Vector2(785, 425)
