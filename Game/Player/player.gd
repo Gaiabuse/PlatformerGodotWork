@@ -64,11 +64,7 @@ func _physics_process(delta: float) -> void:
 		switch_weapon()
 	
 func die():
-	if _is_dead:
-		return
-
-	_is_dead = true
-	queue_free()
+	teleport_to_checkpoint()
 	
 func take_damage(damage:int):
 	_health = max(0, _health - damage)

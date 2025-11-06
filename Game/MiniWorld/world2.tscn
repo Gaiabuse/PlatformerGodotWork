@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d2u7hf7wpifj4"]
+[gd_scene load_steps=19 format=4 uid="uid://d2u7hf7wpifj4"]
 
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_aidxx"]
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_et0dr"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bir324o0vbwfn" path="res://Game/ennemies/basic_ennemy/ennemy.tscn" id="10_u80xu"]
 [ext_resource type="PackedScene" uid="uid://bwdyp2g8e36o1" path="res://Game/ennemies/intelligent_ennemy/intelligent_ennemy.tscn" id="11_h254a"]
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="11_kg07x"]
+[ext_resource type="PackedScene" uid="uid://duse3o00hcps8" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="12_kg07x"]
+[ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_yoe77"]
 
 [sub_resource type="Gradient" id="Gradient_u80xu"]
 offsets = PackedFloat32Array(0, 0.6363636)
@@ -74,7 +76,7 @@ tile_map_data = PackedByteArray("AACJAPH/FAADAAAAAACFAPf/FAAFAAAAAAB3AP//FAACAAA
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="Player" parent="." instance=ExtResource("1_aidxx")]
-position = Vector2(588, 353)
+position = Vector2(8879, 61)
 collision_mask = 2
 max_health = 3
 
@@ -246,6 +248,7 @@ position = Vector2(9673, 1716)
 [node name="special_platform" type="Node" parent="platform" groups=["obstacles"]]
 
 [node name="MovablePlatform" parent="platform/special_platform" instance=ExtResource("5_h254a")]
+physics_interpolation_mode = 1
 position = Vector2(1048, 466)
 speed = 300.0
 
@@ -380,97 +383,92 @@ speed = 300.0
 
 [node name="enemies" type="Node" parent="platform" groups=["obstacles"]]
 
+[node name="Ennemy19" parent="platform/enemies" instance=ExtResource("12_kg07x")]
+position = Vector2(8686, -143)
+speed = 5
+limiteHaut = 200
+limiteBas = 200
+
+[node name="Ennemy20" parent="platform/enemies" instance=ExtResource("12_kg07x")]
+position = Vector2(8888, 554)
+speed = 5
+limiteHaut = 300
+limiteBas = 300
+
+[node name="Ennemy22" parent="platform/enemies" instance=ExtResource("12_kg07x")]
+position = Vector2(6972, 154)
+speed = 5
+limiteHaut = 400
+limiteBas = 400
+
+[node name="Ennemy21" parent="platform/enemies" instance=ExtResource("12_kg07x")]
+position = Vector2(2015, 114)
+speed = 5
+limiteHaut = 200
+limiteBas = 20
+
 [node name="Ennemy" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(1523, 294)
-limiteA = 300
-limiteB = 400
 
 [node name="Ennemy2" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(3660, 194)
 speed = 5
-limiteA = 120
-limiteB = 120
 
 [node name="Ennemy3" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(2955, 199)
 speed = 5
-limiteA = 120
-limiteB = 120
 
 [node name="Ennemy5" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(3336, 775)
-limiteA = 300
-limiteB = 300
 
 [node name="Ennemy4" parent="platform/enemies" instance=ExtResource("11_h254a")]
 position = Vector2(3456, 501)
 speed = 5
-limiteA = 350
-limiteB = 350
 
 [node name="Ennemy6" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(4454, -150)
-limiteB = 900
 
 [node name="Ennemy7" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(5354, -250)
-limiteA = 900
 
 [node name="Ennemy8" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(7947, -495)
 speed = 5
-limiteA = 50
-limiteB = 50
 
 [node name="Ennemy11" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(8941, -173)
 speed = 3
-limiteA = 50
-limiteB = 50
 
 [node name="Ennemy9" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(7926, -235)
-limiteB = 1500
 
 [node name="Ennemy12" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(8297, 901)
-limiteB = 1200
 
 [node name="Ennemy15" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(8286, 1538)
-limiteB = 1200
 
 [node name="Ennemy13" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(9462, 1698)
-limiteA = 1200
 
 [node name="Ennemy16" parent="platform/enemies" instance=ExtResource("11_h254a")]
 position = Vector2(6764, 16)
 speed = 5
-limiteA = 50
-limiteB = 50
 
 [node name="Ennemy18" parent="platform/enemies" instance=ExtResource("11_h254a")]
 position = Vector2(7146, 598)
 speed = 5
-limiteA = 50
-limiteB = 50
 
 [node name="Ennemy14" parent="platform/enemies" instance=ExtResource("11_h254a")]
 position = Vector2(8873, 955)
 speed = 2
-limiteA = 100
-limiteB = 100
 
 [node name="Ennemy17" parent="platform/enemies" instance=ExtResource("11_h254a")]
 position = Vector2(2241, -99)
-limiteA = 50
-limiteB = 50
 
 [node name="Ennemy10" parent="platform/enemies" instance=ExtResource("11_h254a")]
 position = Vector2(8369, 65)
 speed = 5
-limiteB = 500
 
 [node name="TileMapLayer" type="TileMapLayer" parent="platform" groups=["obstacles"]]
 position = Vector2(491, 370)
@@ -480,3 +478,8 @@ tile_set = SubResource("TileSet_rr6q1")
 [node name="zonedie" parent="." instance=ExtResource("11_kg07x")]
 position = Vector2(4172.0005, 2211)
 scale = Vector2(350.78134, 0.5712005)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="game_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("13_yoe77")]
+player = NodePath("../../Player")
