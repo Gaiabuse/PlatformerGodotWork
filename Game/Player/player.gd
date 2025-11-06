@@ -33,6 +33,7 @@ func _ready() -> void:
 	epee_instantiate = false
 	is_right = true
 	instantiate_epee()
+	teleport_to_checkpoint()
 
 
 func _physics_process(delta: float) -> void:
@@ -71,17 +72,7 @@ func _physics_process(delta: float) -> void:
 
 
 func die():
-	can_take_damage = true
-	if(_life >0):
-		_life -=1
-		lost_life.emit()
-		teleport_to_checkpoint()
-		_health = max_health
-		remove_health.emit()
-	else:
-		_health = max_health
-		remove_health.emit()
-		global_position = _start_pos
+	LevelReload.reload()
 	
 func take_damage(damage: int) -> void:
 	if not can_take_damage:
