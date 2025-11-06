@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cudgrgod24vmy"
+path="res://.godot/imported/Mission Impossible Flute Aedan.mp3-ef547692ecda97a3f33a5c87aea01c57.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Mission Impossible Flute Aedan.mp3"
+dest_files=["res://.godot/imported/Mission Impossible Flute Aedan.mp3-ef547692ecda97a3f33a5c87aea01c57.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
