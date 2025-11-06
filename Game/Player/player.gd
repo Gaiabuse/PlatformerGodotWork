@@ -76,6 +76,7 @@ func die():
 	player_life.life -=1
 	lost_life.emit()
 	LevelReload.reload()
+	inventory_manager.bullet_number = inventory_manager.start_bullet_number
 	
 func take_damage(damage: int) -> void:
 	print(can_take_damage)
