@@ -76,7 +76,7 @@ tile_map_data = PackedByteArray("AACJAPH/FAADAAAAAACFAPf/FAAFAAAAAAB3AP//FAACAAA
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="Player" parent="." instance=ExtResource("1_aidxx")]
-position = Vector2(8879, 61)
+position = Vector2(583, 381)
 collision_mask = 2
 max_health = 3
 
@@ -409,6 +409,8 @@ limiteBas = 20
 
 [node name="Ennemy" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(1523, 294)
+limiteGauche = 100
+limiteDroite = 100
 
 [node name="Ennemy2" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(3660, 194)
