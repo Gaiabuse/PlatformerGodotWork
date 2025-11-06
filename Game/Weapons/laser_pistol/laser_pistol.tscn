@@ -12,6 +12,7 @@ anchor = NodePath("anchor")
 bulletScene = ExtResource("2_bggnr")
 CoolDown = NodePath("Cooldown")
 marker = NodePath("anchor/visual/Marker2D")
+offset = 30.0
 metadata/_custom_type_script = "uid://d1ry864omwonf"
 
 [node name="Cooldown" type="Timer" parent="."]

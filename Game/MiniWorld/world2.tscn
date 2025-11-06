@@ -329,56 +329,48 @@ speed = 300.0
 
 [node name="enemies" type="Node" parent="platform" groups=["obstacles"]]
 
-[node name="Ennemy" parent="platform/enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_bt2y8")]
+[node name="Ennemy" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(1523, 294)
-player = NodePath("../../../Player")
 speed = 1
 limiteA = 500
 limiteB = 500
 
-[node name="Ennemy2" parent="platform/enemies" node_paths=PackedStringArray("player") instance=ExtResource("10_u80xu")]
+[node name="Ennemy2" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(3660, 194)
-player = NodePath("../../../Player")
 speed = 2
 limiteA = 150
 limiteB = 150
 
-[node name="Ennemy3" parent="platform/enemies" node_paths=PackedStringArray("player") instance=ExtResource("10_u80xu")]
+[node name="Ennemy3" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(2955, 199)
-player = NodePath("../../../Player")
 speed = 2
 limiteA = 150
 limiteB = 150
 
-[node name="Ennemy5" parent="platform/enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_bt2y8")]
+[node name="Ennemy5" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(3336, 775)
-player = NodePath("../../../Player")
 speed = 3
 limiteA = 300
 limiteB = 300
 
-[node name="Ennemy4" parent="platform/enemies" node_paths=PackedStringArray("player") instance=ExtResource("11_h254a")]
+[node name="Ennemy4" parent="platform/enemies" instance=ExtResource("11_h254a")]
 position = Vector2(3456, 501)
-player = NodePath("../../../Player")
 speed = 3
 limiteA = 350
 limiteB = 350
 
-[node name="Ennemy6" parent="platform/enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_bt2y8")]
+[node name="Ennemy6" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(4454, -150)
-player = NodePath("../../../Player")
 speed = 3
 limiteB = 900
 
-[node name="Ennemy7" parent="platform/enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_bt2y8")]
+[node name="Ennemy7" parent="platform/enemies" instance=ExtResource("9_bt2y8")]
 position = Vector2(5354, -250)
-player = NodePath("../../../Player")
 speed = 3
 limiteA = 900
 
-[node name="Ennemy8" parent="platform/enemies" node_paths=PackedStringArray("player") instance=ExtResource("10_u80xu")]
+[node name="Ennemy8" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(7947, -495)
-player = NodePath("../../../Player")
 speed = 1
 limiteA = 50
 limiteB = 50
