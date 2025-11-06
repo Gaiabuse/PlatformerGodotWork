@@ -14,7 +14,7 @@ var laser_pistol: Pistol
 var _is_dead: bool = false
 var epee_instantiate: bool = false
 var laserpistol_instantiate: bool = false
-
+var is_right : bool
 var _health: int:
 	set(value):
 		_health = value
@@ -23,6 +23,7 @@ var _health: int:
 func _ready() -> void:
 	_health = max_health
 	epee_instantiate = false
+	is_right = true
 	instantiate_epee()
 
 
@@ -33,12 +34,27 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	var direction :float = Input.get_axis("move_left", "move_right")
+	velocity.x = direction * SPEED
+	if velocity.x > 0:
+		is_right = true
+		global_scale.x = 1
+		global_rotation_degrees = 0
+		if(laser_pistol!= null):
+			laser_pistol.global_scale.x = 1
+			laser_pistol.global_rotation_degrees = 0
+			laser_pistol.is_right = true
+	elif velocity.x <0:
+		is_right = false
+		global_scale.x = -1
+		global_rotation_degrees= 180
+		if(laser_pistol!= null):
+			laser_pistol.global_scale.x = -1
+			laser_pistol.global_rotation_degrees = 180
+			laser_pistol.is_right = false
+	
+	print(global_scale.x)
+	print(global_scale.y)
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("test_checkpoint"):
@@ -81,6 +97,14 @@ func instantiate_laserpistol()-> void:
 	add_child(laser_pistol)
 	laser_pistol.global_position = anchor.global_position
 	laser_pistol.owner = owner
+	if is_right:
+		laser_pistol.global_scale.x = 1
+		laser_pistol.global_rotation_degrees = 0
+		laser_pistol.is_right = true
+	else:
+		laser_pistol.global_scale.x = -1
+		laser_pistol.global_rotation_degrees = 180
+		laser_pistol.is_right = false
 
 	laserpistol_instantiate = true
 func switch_weapon()->void:

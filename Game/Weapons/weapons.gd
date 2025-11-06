@@ -18,4 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 func attack() -> void:
 	monitoring = false
 	$SwordAnimation.play("sword_attack")
+	$WeaponAudio.play()
 	monitoring = true
+	await $SwordAnimation.animation_finished
+	monitoring = false
