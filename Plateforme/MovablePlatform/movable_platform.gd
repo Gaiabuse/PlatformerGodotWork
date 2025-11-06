@@ -17,7 +17,7 @@ func _ready() -> void:
 	_initialize()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	go_there()
 	global_position = global_position.move_toward(move, delta*speed)
 
@@ -38,6 +38,7 @@ func go_there():
 		moving = false
 	if global_position == move:
 		moving = true
+
 func _initialize()-> void:
 	if(axe == "x"):
 		startPosition = global_position.x

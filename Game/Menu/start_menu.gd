@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_start_pressed() -> void:
-	print("apagnan")
 	get_tree().change_scene_to_file(first_level)
 
 
