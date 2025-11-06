@@ -75,12 +75,13 @@ _data = {
 &"died": SubResource("Animation_cdg3a")
 }
 
-[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite") groups=["enemies"]]
+[node name="Ennemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "timer") groups=["enemies"]]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_78gdf")
 sprite = NodePath("Sprite")
 speed = 10
+timer = NodePath("Timer")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_ppgq4")
