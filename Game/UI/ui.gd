@@ -14,7 +14,7 @@ func _ready() -> void:
 		full_heart.add_child(instance)
 		liste_coeur.append(instance)
 	number_of_bullet.text = str(inventory_manager.bullet_number)
-	number_of_life.text = str(player._life)
+	number_of_life.text = str(player_life.life)
 	player.lost_health.connect(lost_health)
 	player.lost_life.connect(modify_life_number)
 	player.remove_health.connect(remove_health)
@@ -37,6 +37,5 @@ func remove_health():
 func modify_bullet_number():
 	number_of_bullet.text = str(inventory_manager.bullet_number)
 func modify_life_number():
-	print(player._life)
-	number_of_life.text = str(player._life)
+	number_of_life.text = str(player_life.life)
 	
