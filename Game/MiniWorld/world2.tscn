@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bir324o0vbwfn" path="res://Game/ennemies/basic_ennemy/ennemy.tscn" id="10_u80xu"]
 [ext_resource type="PackedScene" uid="uid://bwdyp2g8e36o1" path="res://Game/ennemies/intelligent_ennemy/intelligent_ennemy.tscn" id="11_h254a"]
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="11_kg07x"]
-[ext_resource type="PackedScene" uid="uid://duse3o00hcps8" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="12_kg07x"]
+[ext_resource type="PackedScene" uid="uid://ds8opa3j2palc" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="12_kg07x"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_yoe77"]
 
 [sub_resource type="Gradient" id="Gradient_u80xu"]
@@ -504,8 +504,12 @@ tile_map_data = PackedByteArray("AAD9/wEAFQAAAAAAAAD+/wEAFQAAAAAAAAD//wEAFQAAAAA
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="zonedie" parent="." instance=ExtResource("11_kg07x")]
-position = Vector2(4172.0005, 2211)
-scale = Vector2(350.78134, 0.5712005)
+position = Vector2(1856, 6353)
+scale = Vector2(-175.59013, -77.703316)
+
+[node name="zonedie2" parent="." instance=ExtResource("11_kg07x")]
+position = Vector2(12802, 8026)
+scale = Vector2(-175.59013, -85.383316)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
