@@ -4,6 +4,7 @@ class_name Pistol extends Node2D
 @export var bulletScene: PackedScene
 @export var CoolDown: Timer
 @export var marker : Marker2D
+@export var offset : float = 50
 var is_right : bool
 var _canShoot: bool
 
@@ -20,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		rotation.x = global_position.x + 100
 	else:
 		rotation.x = global_position.x - 100
+	rotation.y += offset
 	anchor.look_at(rotation)
 	if (Input.is_action_just_pressed("attack")):
 		_shoot()
@@ -33,6 +35,7 @@ func _shoot() -> void:
 		projectile.global_rotation = anchor.global_rotation
 		inventory_manager.bullet_number -=1
 		$LaserPistolAudio.play()
+		inventory_manager.change_bullet_number.emit()
 		_canShoot = false
 
 
