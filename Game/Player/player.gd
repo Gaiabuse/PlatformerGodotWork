@@ -78,6 +78,7 @@ func die():
 	LevelReload.reload()
 	
 func take_damage(damage: int) -> void:
+	print(can_take_damage)
 	if not can_take_damage:
 		return
 	can_take_damage = false
