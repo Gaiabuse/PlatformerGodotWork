@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bvfed6y4cl7q5"]
+[gd_scene load_steps=19 format=4 uid="uid://bvfed6y4cl7q5"]
 
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_aidxx"]
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_et0dr"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="11_kg07x"]
 [ext_resource type="PackedScene" uid="uid://ds8opa3j2palc" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="12_kg07x"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_yoe77"]
-[ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="14_um3nv"]
 
 [sub_resource type="Gradient" id="Gradient_u80xu"]
 offsets = PackedFloat32Array(0, 0.6363636)
@@ -516,6 +515,3 @@ scale = Vector2(-175.59013, -85.383316)
 
 [node name="game_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("13_yoe77")]
 player = NodePath("../../Player")
-
-[node name="BulletOnField" parent="." instance=ExtResource("14_um3nv")]
-position = Vector2(785, 425)
