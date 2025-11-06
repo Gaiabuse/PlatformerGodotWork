@@ -51,7 +51,7 @@ sources/20 = SubResource("TileSetAtlasSource_jsqj8")
 sources/21 = SubResource("TileSetAtlasSource_usgto")
 tile_proxies/coords_level = [[12, Vector2i(0, 0)], [20, Vector2i(0, 0)], [12, Vector2i(1, 0)], [20, Vector2i(1, 0)], [12, Vector2i(2, 0)], [20, Vector2i(2, 0)], [12, Vector2i(3, 0)], [20, Vector2i(3, 0)], [12, Vector2i(4, 0)], [20, Vector2i(4, 0)], [12, Vector2i(5, 0)], [20, Vector2i(5, 0)], [12, Vector2i(6, 0)], [20, Vector2i(6, 0)], [12, Vector2i(6, 1)], [20, Vector2i(6, 1)], [12, Vector2i(7, 0)], [20, Vector2i(7, 0)], [12, Vector2i(7, 1)], [20, Vector2i(7, 1)], [12, Vector2i(8, 0)], [20, Vector2i(8, 0)], [12, Vector2i(9, 0)], [20, Vector2i(9, 0)], [14, Vector2i(0, 0)], [20, Vector2i(10, 0)], [15, Vector2i(0, 0)], [20, Vector2i(11, 0)], [16, Vector2i(0, 0)], [20, Vector2i(12, 0)], [17, Vector2i(0, 0)], [20, Vector2i(13, 0)], [18, Vector2i(0, 0)], [20, Vector2i(14, 0)], [19, Vector2i(0, 0)], [20, Vector2i(15, 0)]]
 
-[node name="world_test" type="Node2D"]
+[node name="world_test2" type="Node2D"]
 
 [node name="EnvironmentBackGround" type="TileMapLayer" parent="."]
 position = Vector2(492, 375)
@@ -68,35 +68,22 @@ max_health = 3
 [node name="Ennemy3" parent="Enemies" instance=ExtResource("8_1430a")]
 position = Vector2(3720, 405)
 speed = 15
-limiteA = 180
-limiteB = 180
 max_health = 1
 
 [node name="Ennemy2" parent="Enemies" instance=ExtResource("6_mp81a")]
 position = Vector2(2761, 274)
-speed = 10
-limiteA = 350
-limiteB = 350
 
 [node name="Ennemy" parent="Enemies" instance=ExtResource("8_8onjg")]
 position = Vector2(1298, 404)
-limiteA = 70
-limiteB = 70
 
 [node name="Ennemy4" parent="Enemies" instance=ExtResource("7_pbm53")]
 position = Vector2(4931, 913)
-limiteA = 150
-limiteB = 150
 
 [node name="Ennemy5" parent="Enemies" instance=ExtResource("7_pbm53")]
 position = Vector2(5273, 924)
-limiteA = 150
-limiteB = 150
 
 [node name="Ennemy6" parent="Enemies" instance=ExtResource("7_pbm53")]
 position = Vector2(5577, 907)
-limiteA = 150
-limiteB = 150
 
 [node name="EnvironmentForeGround" type="TileMapLayer" parent="."]
 position = Vector2(492, 375)
