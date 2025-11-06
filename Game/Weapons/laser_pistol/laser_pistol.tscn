@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://hbqqjy31jjgx" path="res://Assets/Default/item_blaster.png" id="1_jm3tx"]
 [ext_resource type="Script" uid="uid://d1ry864omwonf" path="res://Game/Weapons/laser_pistol/laser_pistol.gd" id="1_w77n0"]
 [ext_resource type="PackedScene" uid="uid://i6pyrv7gdsnj" path="res://Game/Weapons/laser_pistol/bullet/bullet.tscn" id="2_bggnr"]
-[ext_resource type="AudioStream" uid="uid://bhrrtf6t12p54" path="res://Assets/blaster-2-81267.mp3" id="4_c2orj"]
+[ext_resource type="AudioStream" uid="uid://bhrrtf6t12p54" path="res://Assets/Sound/blaster-2-81267.mp3" id="4_c2orj"]
 
 [node name="LaserPistol" type="Node2D" node_paths=PackedStringArray("anchor", "CoolDown", "marker")]
 position = Vector2(25, 0)
