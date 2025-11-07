@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b6ubmucr1su64"]
+[gd_scene load_steps=0 format=3 uid="uid://b6ubmucr1su64"]
 
 [node name="Menu Pause" type="Control"]
 layout_mode = 3
