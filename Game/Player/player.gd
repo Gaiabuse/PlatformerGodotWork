@@ -22,6 +22,9 @@ var _health: int:
 		_health = value
 var can_take_damage: bool = true
 var _start_pos:Vector2
+var can_jump : bool = true
+var start_timer:bool = false
+@export var jump_timer:Timer
 
 
 func _ready() -> void:
@@ -36,15 +39,17 @@ func _ready() -> void:
 	is_right = true
 	instantiate_epee()
 
-
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if not is_on_floor() and !start_timer:
+		jump_timer.start()
+		start_timer = true
+	if is_on_floor_only():
+		can_jump = true
+	if Input.is_action_just_pressed("jump") and can_jump:
 		velocity.y = JUMP_VELOCITY
 		$JumpPlayer.play()
-
 	var direction: float = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
 	if velocity.x > 0:
@@ -155,3 +160,8 @@ func switch_weapon() -> void:
 		laser_pistol = null
 		instantiate_epee()
 		laserpistol_instantiate = false
+
+
+func _on_can_jump_timer_timeout() -> void:
+	can_jump = false
+	start_timer = false # Replace with function body.

@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Player) -> void:
 	if _is_touched :return
 	_is_touched = true
+	print(strength)
 	body.take_damage(strength)
 	cooldown.start()
 

@@ -24,6 +24,9 @@ player_life="*res://Game/Player/player_life.gd"
 
 [display]
 
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://ch8t17uvs2ms"
 
 [editor_plugins]
