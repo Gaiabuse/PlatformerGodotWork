@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cqr3r8ierfedq"]
+[gd_scene load_steps=29 format=4 uid="uid://b53dl05ud7jqq"]
 
 [ext_resource type="Texture2D" uid="uid://b66h1l870lpfb" path="res://Assets/Default/tile_ladder.png" id="1_2yppg"]
 [ext_resource type="Texture2D" uid="uid://dg03ia3flbf2u" path="res://Assets/image-mesh-gradient.png" id="1_7lsn0"]
@@ -14,9 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bwdyp2g8e36o1" path="res://Game/ennemies/intelligent_ennemy/intelligent_ennemy.tscn" id="11_b4rul"]
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="12_txb6e"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_aitkx"]
-[ext_resource type="PackedScene" uid="uid://beo3da2ns2cav" path="res://Game/UI/menu_pause.tscn" id="13_ju1qi"]
+[ext_resource type="PackedScene" uid="uid://cldaeucw27s8w" path="res://Game/ennemies/stupid_ennemy/stupid_ennemy.tscn" id="13_h77tr"]
+[ext_resource type="PackedScene" uid="uid://b6ubmucr1su64" path="res://Game/UI/menu_pause.tscn" id="13_ju1qi"]
 [ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="14_8y6iu"]
 [ext_resource type="AudioStream" uid="uid://cudgrgod24vmy" path="res://Assets/Sound/Mission Impossible Flute Aedan.mp3" id="15_uos7x"]
+[ext_resource type="PackedScene" uid="uid://ds8opa3j2palc" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="19_iana2"]
 
 [sub_resource type="Gradient" id="Gradient_u80xu"]
 offsets = PackedFloat32Array(0, 0.9054545)
@@ -527,6 +529,21 @@ max_health = 20
 limiteGauche = 500
 limiteDroite = 500
 
+[node name="Ennemy11" parent="platform" instance=ExtResource("13_h77tr")]
+position = Vector2(3215, 850)
+limiteGauche = 125
+limiteDroite = 125
+
+[node name="Ennemy12" parent="platform" instance=ExtResource("9_nbiuj")]
+position = Vector2(2364, 382)
+limiteGauche = 100
+limiteDroite = 100
+
+[node name="Ennemy13" parent="platform" instance=ExtResource("9_nbiuj")]
+position = Vector2(2710, 382)
+limiteGauche = 100
+limiteDroite = 100
+
 [node name="zonedie" parent="." instance=ExtResource("12_txb6e")]
 position = Vector2(1856, 6353)
 scale = Vector2(-175.59013, -77.703316)
@@ -554,6 +571,16 @@ position = Vector2(785, 425)
 stream = ExtResource("15_uos7x")
 autoplay = true
 parameters/looping = true
+
+[node name="Ennemy" parent="." instance=ExtResource("19_iana2")]
+position = Vector2(5682, 731)
+limiteHaut = 50
+limiteBas = 50
+
+[node name="Ennemy2" parent="." instance=ExtResource("11_b4rul")]
+position = Vector2(7178, 468)
+limiteGauche = 15
+limiteDroite = 30
 
 [editable path="platform/special_platform/BreakablePlatform7"]
 [editable path="platform/special_platform/BreakablePlatform8"]
