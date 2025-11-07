@@ -24,6 +24,7 @@ var can_take_damage: bool = true
 var _start_pos:Vector2
 
 
+
 func _ready() -> void:
 	if(player_life.life <=0):
 		_start_pos = global_position
@@ -35,7 +36,6 @@ func _ready() -> void:
 	epee_instantiate = false
 	is_right = true
 	instantiate_epee()
-
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

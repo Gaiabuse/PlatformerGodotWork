@@ -187,7 +187,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tyvts")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lstfa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t7weu")
 action_mode = 0
-text = "commançé a jouai au jeu"
+text = "commançé a jouai a le jeu"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1

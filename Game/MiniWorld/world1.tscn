@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://kvms4l3p5lvm"]
+[gd_scene load_steps=23 format=4 uid="uid://kvms4l3p5lvm"]
 
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_02jna"]
 [ext_resource type="Texture2D" uid="uid://d38sa0hsegge7" path="res://Tilemap/plateforme.png" id="2_esd2q"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_u24xg"]
 [ext_resource type="PackedScene" uid="uid://byyk1ebx13sqh" path="res://Game/doors/door.tscn" id="14_11qnq"]
 [ext_resource type="AudioStream" uid="uid://cudgrgod24vmy" path="res://Assets/Sound/Mission Impossible Flute Aedan.mp3" id="15_oprjo"]
+[ext_resource type="PackedScene" uid="uid://beo3da2ns2cav" path="res://Game/UI/menu_pause.tscn" id="17_2bq32"]
 
 [sub_resource type="Gradient" id="Gradient_02jna"]
 offsets = PackedFloat32Array(0, 0.65090907, 0.90909094)
@@ -83,10 +84,11 @@ position = Vector2(8843, 406)
 next_level = "res://Game/MiniWorld/world2.tscn"
 first_checkpoint = Vector2(596, 327)
 
-[node name="Player" parent="." instance=ExtResource("3_2bq32")]
+[node name="Player" parent="." node_paths=PackedStringArray("menu_pause") instance=ExtResource("3_2bq32")]
 position = Vector2(590, 368)
 collision_mask = 2
 max_health = 3
+menu_pause = NodePath("../CanvasLayer/pause_menu")
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -233,6 +235,8 @@ offset_left = 10.0
 offset_top = 19.0
 offset_bottom = 48.0
 player = NodePath("../../Player")
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("17_2bq32")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_oprjo")
