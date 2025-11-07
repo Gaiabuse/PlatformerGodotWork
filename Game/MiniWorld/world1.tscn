@@ -84,11 +84,10 @@ position = Vector2(8843, 406)
 next_level = "res://Game/MiniWorld/world2.tscn"
 first_checkpoint = Vector2(596, 327)
 
-[node name="Player" parent="." node_paths=PackedStringArray("menu_pause") instance=ExtResource("3_2bq32")]
-position = Vector2(590, 368)
+[node name="Player" parent="." instance=ExtResource("3_2bq32")]
+position = Vector2(588, 343)
 collision_mask = 2
 max_health = 3
-menu_pause = NodePath("../CanvasLayer/pause_menu")
 
 [node name="Enemies" type="Node" parent="."]
 

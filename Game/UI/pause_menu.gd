@@ -1,7 +1,5 @@
 extends Control
-##path of the first level
-@export var level_1 : String
-@export var level_2 : String
+
 var pause : bool
 
 func _ready() -> void:
@@ -25,5 +23,8 @@ func pause_unpause() -> void:
 func _on_play_button_button_up() -> void:
 	pause_unpause()
 
-func _on_quit_button_button_up() -> void:
-	get_tree().quit()
+
+func _on_main_menu_button_button_up() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Game/Menu/StartMenu.tscn")
+	

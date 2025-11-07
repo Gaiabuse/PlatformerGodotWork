@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b7koqn5gtqdlr" path="res://Assets/Default/fond_menu.png" id="2_hix7y"]
 
 [sub_resource type="FontFile" id="FontFile_i2ili"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/46/0/ascent = 0.0
 cache/0/46/0/descent = 0.0
 cache/0/46/0/underline_position = 0.0
@@ -154,8 +157,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k4gmp")
-level_1 = "res://Game/MiniWorld/world1.tscn"
-level_2 = "res://Game/MiniWorld/world2.tscn"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 visible = false
@@ -190,7 +191,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_t7weu")
 action_mode = 0
 text = "re jouer a le jeu"
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="MainMenuButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -209,12 +210,12 @@ theme_override_colors/font_hover_color = Color(0.8745098, 0, 0.8745098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = SubResource("FontFile_i2ili")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 52
 theme_override_styles/normal = SubResource("StyleBoxFlat_tyvts")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lstfa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t7weu")
 action_mode = 0
-text = "parti
+text = "le menu du debut que le jeu se lance
 "
 
 [node name="Title" type="Label" parent="."]
@@ -224,7 +225,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -576.0
 offset_top = 52.0
-offset_right = 687.98254
+offset_right = 561.5842
 offset_bottom = 155.0
 grow_horizontal = 2
 scale = Vector2(1.0126722, 0.97276515)
@@ -232,10 +233,10 @@ theme_override_colors/font_color = Color(0.99607843, 0, 0.33333334, 1)
 theme_override_colors/font_outline_color = Color(0, 0.5647059, 0.5568628, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 75
-text = "super méga tro bi1 platformer "
+text = "pauze"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="button_up" from="PlayButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="PlayButton" to="." method="_on_play_button_button_up"]
-[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="MainMenuButton" to="." method="_on_main_menu_button_button_up"]
