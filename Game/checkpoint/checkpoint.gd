@@ -10,6 +10,7 @@ func _on_body_entered(body: Node2D) -> void:
 	print(CheckpointVar.checkpoint)
 	
 	$".".set_deferred("monitoring",false)
+	
 	var explosionVFX:Node2D = explosion_scene.instantiate()
 	owner.add_child(explosionVFX)
 	explosionVFX.global_position = global_position
