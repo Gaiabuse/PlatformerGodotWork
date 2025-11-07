@@ -81,6 +81,7 @@ tile_set = SubResource("TileSet_rr6q1")
 [node name="Door" parent="." instance=ExtResource("14_11qnq")]
 position = Vector2(8843, 406)
 next_level = "res://Game/MiniWorld/world2.tscn"
+first_checkpoint = Vector2(596, 327)
 
 [node name="Player" parent="." instance=ExtResource("3_2bq32")]
 position = Vector2(590, 368)
