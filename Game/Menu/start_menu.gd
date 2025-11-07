@@ -1,20 +1,12 @@
 extends Control
 ##path of the first level
-@export var first_level : String
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var level_1 : String
+@export var level_2 : String
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_start_button_button_up() -> void:
+	get_tree().change_scene_to_file(level_1)
 
 
-func _on_button_start_pressed() -> void:
-	get_tree().change_scene_to_file(first_level)
-
-
-func _on_button_quit_pressed() -> void:
-	get_tree().quit() # Replace with function body.
+func _on_quit_button_button_up() -> void:
+	get_tree().quit()

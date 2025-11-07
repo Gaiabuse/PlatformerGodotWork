@@ -1,11 +1,150 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5la27smu6km"]
+[gd_scene load_steps=7 format=3 uid="uid://b5la27smu6km"]
 
 [ext_resource type="Script" uid="uid://dkskvfif42jj6" path="res://Game/Menu/start_menu.gd" id="1_dlqw2"]
-[ext_resource type="Texture2D" uid="uid://c4xif3ea61vox" path="res://Assets/Default/ui_button.png" id="1_t7weu"]
+[ext_resource type="Texture2D" uid="uid://b7koqn5gtqdlr" path="res://Assets/Default/fond_menu.png" id="2_dlqw2"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_t7weu"]
-font_size = 60
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="FontFile" id="FontFile_i2ili"]
+cache/0/46/0/ascent = 0.0
+cache/0/46/0/descent = 0.0
+cache/0/46/0/underline_position = 0.0
+cache/0/46/0/underline_thickness = 0.0
+cache/0/46/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/47/0/ascent = 0.0
+cache/0/47/0/descent = 0.0
+cache/0/47/0/underline_position = 0.0
+cache/0/47/0/underline_thickness = 0.0
+cache/0/47/0/scale = 1.0
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+cache/0/49/0/ascent = 0.0
+cache/0/49/0/descent = 0.0
+cache/0/49/0/underline_position = 0.0
+cache/0/49/0/underline_thickness = 0.0
+cache/0/49/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/51/0/ascent = 0.0
+cache/0/51/0/descent = 0.0
+cache/0/51/0/underline_position = 0.0
+cache/0/51/0/underline_thickness = 0.0
+cache/0/51/0/scale = 1.0
+cache/0/52/0/ascent = 0.0
+cache/0/52/0/descent = 0.0
+cache/0/52/0/underline_position = 0.0
+cache/0/52/0/underline_thickness = 0.0
+cache/0/52/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/44/0/ascent = 0.0
+cache/0/44/0/descent = 0.0
+cache/0/44/0/underline_position = 0.0
+cache/0/44/0/underline_thickness = 0.0
+cache/0/44/0/scale = 1.0
+cache/0/43/0/ascent = 0.0
+cache/0/43/0/descent = 0.0
+cache/0/43/0/underline_position = 0.0
+cache/0/43/0/underline_thickness = 0.0
+cache/0/43/0/scale = 1.0
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
+cache/0/41/0/ascent = 0.0
+cache/0/41/0/descent = 0.0
+cache/0/41/0/underline_position = 0.0
+cache/0/41/0/underline_thickness = 0.0
+cache/0/41/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/38/0/ascent = 0.0
+cache/0/38/0/descent = 0.0
+cache/0/38/0/underline_position = 0.0
+cache/0/38/0/underline_thickness = 0.0
+cache/0/38/0/scale = 1.0
+cache/0/37/0/ascent = 0.0
+cache/0/37/0/descent = 0.0
+cache/0/37/0/underline_position = 0.0
+cache/0/37/0/underline_thickness = 0.0
+cache/0/37/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyvts"]
+bg_color = Color(0.0627451, 0.6, 0.6, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.023529412, 0.8, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lstfa"]
+bg_color = Color(1, 0, 0.25882354, 0.972549)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.023529412, 0.8, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7weu"]
+bg_color = Color(0.5176471, 0.49019608, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.023529412, 0.8, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -15,56 +154,86 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dlqw2")
-first_level = "res://Game/MiniWorld/worldTest.tscn"
+level_1 = "res://Game/MiniWorld/world1.tscn"
+level_2 = "res://Game/MiniWorld/world2.tscn"
 
-[node name="StartButton" type="Node2D" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_dlqw2")
 
-[node name="Button" type="Button" parent="StartButton"]
-offset_left = 401.0
-offset_top = 169.00002
-offset_right = 620.0
-offset_bottom = 387.0
-scale = Vector2(1.6345186, 0.48000032)
-theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_hover_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.2231029, 0.2231029, 0.22310287, 1)
-icon = ExtResource("1_t7weu")
-flat = true
-expand_icon = true
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -6.0
+offset_right = 170.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0.8745098, 1)
+theme_override_colors/font_pressed_color = Color(0.8745098, 0, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.8745098, 0, 0.8745098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("FontFile_i2ili")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_tyvts")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lstfa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t7weu")
+action_mode = 0
+text = "commançé a jouai au jeu"
 
-[node name="Label" type="Label" parent="StartButton"]
-offset_left = 440.0
-offset_top = 176.0
-offset_right = 710.0
-offset_bottom = 259.0
-text = "Start"
-label_settings = SubResource("LabelSettings_t7weu")
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = 134.0
+offset_right = 170.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0.8745098, 1)
+theme_override_colors/font_pressed_color = Color(0.8745098, 0, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.8745098, 0, 0.8745098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("FontFile_i2ili")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_tyvts")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lstfa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t7weu")
+action_mode = 0
+text = "parti
+"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 52.0
+offset_right = 687.98254
+offset_bottom = 155.0
+grow_horizontal = 2
+scale = Vector2(1.0126722, 0.97276515)
+theme_override_colors/font_color = Color(0.99607843, 0, 0.33333334, 1)
+theme_override_colors/font_outline_color = Color(0, 0.5647059, 0.5568628, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 75
+text = "super méga tro bi1 platformer "
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="QuitButton" type="Node2D" parent="."]
-position = Vector2(0, 163)
-
-[node name="Button" type="Button" parent="QuitButton"]
-offset_left = 401.0
-offset_top = 169.00002
-offset_right = 620.0
-offset_bottom = 387.0
-scale = Vector2(1.6345186, 0.48000032)
-theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_hover_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.2231029, 0.2231029, 0.22310287, 1)
-icon = ExtResource("1_t7weu")
-flat = true
-expand_icon = true
-
-[node name="Label" type="Label" parent="QuitButton"]
-offset_left = 440.0
-offset_top = 176.0
-offset_right = 710.0
-offset_bottom = 259.0
-text = "Quit"
-label_settings = SubResource("LabelSettings_t7weu")
-horizontal_alignment = 1
-
-[connection signal="pressed" from="StartButton/Button" to="." method="_on_button_start_pressed"]
-[connection signal="pressed" from="QuitButton/Button" to="." method="_on_button_quit_pressed"]
+[connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
