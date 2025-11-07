@@ -25,7 +25,7 @@ lifetime_randomness = 0.5
 particle_flag_align_y = true
 angle_min = 1.0728835e-05
 angle_max = 1.0728835e-05
-spread = 180.0
+spread = 90.0
 initial_velocity_min = 500.0
 initial_velocity_max = 500.0
 gravity = Vector3(0, 98, 0)
@@ -47,7 +47,7 @@ lifetime_randomness = 0.5
 particle_flag_align_y = true
 angle_min = 1.0728835e-05
 angle_max = 1.0728835e-05
-spread = 180.0
+spread = 90.0
 initial_velocity_min = 500.0
 initial_velocity_max = 500.0
 gravity = Vector3(0, 98, 0)
@@ -61,6 +61,7 @@ color_ramp = SubResource("GradientTexture1D_5oi6x")
 script = SubResource("GDScript_axhqa")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+rotation = -1.5707964
 emitting = false
 amount = 100
 texture = ExtResource("1_axhqa")
@@ -69,6 +70,7 @@ explosiveness = 0.5
 process_material = SubResource("ParticleProcessMaterial_5oi6x")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+rotation = -1.5707964
 emitting = false
 amount = 100
 texture = ExtResource("2_f8j2q")
