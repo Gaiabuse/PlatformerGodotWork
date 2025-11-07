@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5la27smu6km"]
 
-[ext_resource type="Script" uid="uid://dkskvfif42jj6" path="res://Game/Menu/start_menu.gd" id="1_dlqw2"]
+[ext_resource type="Script" uid="uid://dkskvfif42jj6" path="res://Game/UI/start_menu.gd" id="1_dlqw2"]
 [ext_resource type="Texture2D" uid="uid://b7koqn5gtqdlr" path="res://Assets/Default/fond_menu.png" id="2_dlqw2"]
 [ext_resource type="Texture2D" uid="uid://dd85xkilmbcly" path="res://Assets/11428912.png" id="3_i2ili"]
 
@@ -231,7 +231,7 @@ theme_override_colors/font_color = Color(0.99607843, 0, 0.33333334, 1)
 theme_override_colors/font_outline_color = Color(0, 0.5647059, 0.5568628, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 75
-text = "super méga tro bi1 platformer "
+text = "Flip Flop 1 2 3 et tu Flop"
 horizontal_alignment = 1
 vertical_alignment = 1
 

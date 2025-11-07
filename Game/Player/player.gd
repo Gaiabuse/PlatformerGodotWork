@@ -1,32 +1,39 @@
 class_name Player
 extends CharacterBody2D
 
-@export var camera: Camera2D
+'''Statistikques'''
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
 @export var max_health: int
+var _health: int:
+	set(value):
+		_health = value
+
+'''Import'''
+@export var camera: Camera2D
 @export var anchor: Node2D
 @export var epee_scene: PackedScene
 @export var laserpistol_scene: PackedScene
+@export var jump_timer:Timer
+
+'''Signals'''
 signal lost_health
 signal lost_life
 signal remove_health
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+
+'''Armes'''
 var epee: Sword
 var laser_pistol: Pistol
+
+'''Status'''
 var _is_dead: bool = false
 var epee_instantiate: bool = false
 var laserpistol_instantiate: bool = false
 var is_right: bool
-var _health: int:
-	set(value):
-		_health = value
 var can_take_damage: bool = true
 var _start_pos:Vector2
 var can_jump : bool = true
 var start_timer:bool = false
-@export var jump_timer:Timer
-
-
 
 func _ready() -> void:
 	if(player_life.life <=0):
@@ -69,7 +76,7 @@ func _physics_process(delta: float) -> void:
 			laser_pistol.global_scale.x = -1
 			laser_pistol.global_rotation_degrees = 180
 			laser_pistol.is_right = false
-
+	
 	move_and_slide()
 
 	if Input.is_action_just_pressed("test_checkpoint"):

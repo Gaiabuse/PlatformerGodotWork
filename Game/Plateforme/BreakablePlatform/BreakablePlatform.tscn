@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://lp454xjcvc3m"]
 
 [ext_resource type="Texture2D" uid="uid://dn01svcy14aiv" path="res://Assets/Default/tile_brick.png" id="1_ii32j"]
-[ext_resource type="Script" uid="uid://m0kt7bdm3qyo" path="res://Plateforme/BreakablePlatform/breakable_platform.gd" id="1_tlpgo"]
+[ext_resource type="Script" uid="uid://m0kt7bdm3qyo" path="res://Game/Plateforme/BreakablePlatform/breakable_platform.gd" id="1_tlpgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlpgo"]
 size = Vector2(265, 64)

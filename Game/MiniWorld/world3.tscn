@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b53dl05ud7jqq"]
+[gd_scene load_steps=29 format=4 uid="uid://dlhjewxnr5x5h"]
 
 [ext_resource type="Texture2D" uid="uid://b66h1l870lpfb" path="res://Assets/Default/tile_ladder.png" id="1_2yppg"]
 [ext_resource type="Texture2D" uid="uid://dg03ia3flbf2u" path="res://Assets/image-mesh-gradient.png" id="1_7lsn0"]
@@ -7,15 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="3_7lsn0"]
 [ext_resource type="PackedScene" uid="uid://6bhetbv0xkkx" path="res://Game/checkpoint/checkpoint.tscn" id="4_h77tr"]
 [ext_resource type="PackedScene" uid="uid://byyk1ebx13sqh" path="res://Game/doors/door.tscn" id="4_jypt2"]
-[ext_resource type="PackedScene" uid="uid://bmj0ug2boe8jf" path="res://Plateforme/Spike/Spike.tscn" id="5_iana2"]
-[ext_resource type="PackedScene" uid="uid://mr76owxq6swr" path="res://Plateforme/MovablePlatform/movablePlatform.tscn" id="6_rjdwt"]
-[ext_resource type="PackedScene" uid="uid://lp454xjcvc3m" path="res://Plateforme/BreakablePlatform/BreakablePlatform.tscn" id="7_wtk1e"]
+[ext_resource type="PackedScene" uid="uid://bmj0ug2boe8jf" path="res://Game/Plateforme/Spike/Spike.tscn" id="5_iana2"]
+[ext_resource type="PackedScene" uid="uid://mr76owxq6swr" path="res://Game/Plateforme/MovablePlatform/movablePlatform.tscn" id="6_rjdwt"]
+[ext_resource type="PackedScene" uid="uid://lp454xjcvc3m" path="res://Game/Plateforme/BreakablePlatform/BreakablePlatform.tscn" id="7_wtk1e"]
 [ext_resource type="PackedScene" uid="uid://b3mbfykx636c0" path="res://Game/ennemies/flying_ennemy/flying_ennemy.tscn" id="9_nbiuj"]
 [ext_resource type="PackedScene" uid="uid://bwdyp2g8e36o1" path="res://Game/ennemies/intelligent_ennemy/intelligent_ennemy.tscn" id="11_b4rul"]
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="12_txb6e"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_aitkx"]
 [ext_resource type="PackedScene" uid="uid://cldaeucw27s8w" path="res://Game/ennemies/stupid_ennemy/stupid_ennemy.tscn" id="13_h77tr"]
-[ext_resource type="PackedScene" uid="uid://b6ubmucr1su64" path="res://Game/UI/menu_pause.tscn" id="13_ju1qi"]
+[ext_resource type="PackedScene" uid="uid://beo3da2ns2cav" path="res://Game/UI/menu_pause.tscn" id="13_ju1qi"]
 [ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="14_8y6iu"]
 [ext_resource type="AudioStream" uid="uid://cudgrgod24vmy" path="res://Assets/Sound/Mission Impossible Flute Aedan.mp3" id="15_uos7x"]
 [ext_resource type="PackedScene" uid="uid://ds8opa3j2palc" path="res://Game/ennemies/flying_ennemy_top_down/flying_ennemy_top_down.tscn" id="19_iana2"]
@@ -121,7 +121,7 @@ position = Vector2(19980, -300)
 next_level = "res://Game/UI/end_menu.tscn"
 
 [node name="Player" parent="." instance=ExtResource("3_7lsn0")]
-position = Vector2(449, 464)
+position = Vector2(430, 449)
 collision_mask = 2
 max_health = 3
 

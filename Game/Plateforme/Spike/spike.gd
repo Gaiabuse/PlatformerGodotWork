@@ -51,14 +51,11 @@ func spike_moving():
 func _initialize()-> void:
 	startPosition = global_position.y
 	destination = global_position.y +height
-			
-
 
 func _on_spike_out_timer_timeout() -> void:
 	_timer_start = false
 	_start_spike_system = true
 	moving = true
-
 
 func _on_spike_in_timer_timeout() -> void:
 	_timer_start = false

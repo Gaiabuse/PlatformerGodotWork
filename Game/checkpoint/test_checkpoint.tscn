@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=4 uid="uid://bmo4c2gr6vori"]
+[gd_scene load_steps=13 format=4 uid="uid://dyuj34632imqp"]
 
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_fqeo7"]
 [ext_resource type="Texture2D" uid="uid://dn01svcy14aiv" path="res://Assets/Default/tile_brick.png" id="2_g4116"]
 [ext_resource type="Texture2D" uid="uid://c6ah8vekn8g7p" path="res://Assets/Default/tile_grass.png" id="3_nvcm2"]
 [ext_resource type="Texture2D" uid="uid://busp76i8ga87" path="res://Assets/Default/tile.png" id="4_r0xl6"]
-[ext_resource type="PackedScene" uid="uid://mr76owxq6swr" path="res://Plateforme/MovablePlatform/movablePlatform.tscn" id="5_ljpep"]
-[ext_resource type="PackedScene" uid="uid://lp454xjcvc3m" path="res://Plateforme/BreakablePlatform/BreakablePlatform.tscn" id="6_us726"]
-[ext_resource type="PackedScene" uid="uid://bmj0ug2boe8jf" path="res://Plateforme/Spike/Spike.tscn" id="7_hwasu"]
+[ext_resource type="PackedScene" uid="uid://mr76owxq6swr" path="res://Game/Plateforme/MovablePlatform/movablePlatform.tscn" id="5_ljpep"]
+[ext_resource type="PackedScene" uid="uid://lp454xjcvc3m" path="res://Game/Plateforme/BreakablePlatform/BreakablePlatform.tscn" id="6_us726"]
+[ext_resource type="PackedScene" uid="uid://bmj0ug2boe8jf" path="res://Game/Plateforme/Spike/Spike.tscn" id="7_hwasu"]
 [ext_resource type="PackedScene" uid="uid://6bhetbv0xkkx" path="res://Game/checkpoint/checkpoint.tscn" id="8_dpsut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6d18"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6b1aakfd7q1j"]
+[gd_scene load_steps=7 format=3 uid="uid://f74fdfiwuy1v"]
 
 [ext_resource type="Texture2D" uid="uid://b7koqn5gtqdlr" path="res://Assets/Default/fond_menu.png" id="1_h4lyu"]
 
@@ -6,7 +6,7 @@
 script/source = "extends Control
 
 func _on_main_menu_button_button_up() -> void:
-	get_tree().change_scene_to_file(\"res://Game/Menu/StartMenu.tscn\")
+	get_tree().change_scene_to_file(\"res://Game/UI/StartMenu.tscn\")
 "
 
 [sub_resource type="FontFile" id="FontFile_h2hj6"]

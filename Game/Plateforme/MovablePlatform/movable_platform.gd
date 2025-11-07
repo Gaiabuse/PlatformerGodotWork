@@ -10,6 +10,7 @@ var destination : float
 var startPosition : float
 var returnToStart: bool
 var move : Vector2 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	returnToStart = false
@@ -21,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	go_there()
 	global_position = global_position.move_toward(move, delta*speed)
 
+'''Déplacement'''
 func go_there():
 	if moving :
 		if(axe == "x"):
@@ -46,4 +48,3 @@ func _initialize()-> void:
 	else :
 		startPosition = global_position.y
 		destination = global_position.y +distance
-			
