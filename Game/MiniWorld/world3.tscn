@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b53dl05ud7jqq"]
+[gd_scene load_steps=24 format=4 uid="uid://b53dl05ud7jqq"]
 
 [ext_resource type="Texture2D" uid="uid://b66h1l870lpfb" path="res://Assets/Default/tile_ladder.png" id="1_2yppg"]
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_ju1qi"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mr76owxq6swr" path="res://Plateforme/MovablePlatform/movablePlatform.tscn" id="6_rjdwt"]
 [ext_resource type="PackedScene" uid="uid://lp454xjcvc3m" path="res://Plateforme/BreakablePlatform/BreakablePlatform.tscn" id="7_wtk1e"]
 [ext_resource type="PackedScene" uid="uid://b3mbfykx636c0" path="res://Game/ennemies/flying_ennemy/flying_ennemy.tscn" id="9_nbiuj"]
+[ext_resource type="PackedScene" uid="uid://bwdyp2g8e36o1" path="res://Game/ennemies/intelligent_ennemy/intelligent_ennemy.tscn" id="11_b4rul"]
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="12_txb6e"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_aitkx"]
 [ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="14_8y6iu"]
@@ -101,7 +102,7 @@ position = Vector2(492, 375)
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="Player" parent="." instance=ExtResource("3_7lsn0")]
-position = Vector2(10127, 267)
+position = Vector2(557, 465)
 collision_mask = 2
 max_health = 3
 
@@ -114,7 +115,10 @@ tile_set = SubResource("TileSet_rr6q1")
 [node name="checkpoints" type="Node" parent="platform"]
 
 [node name="checkpoint" parent="platform/checkpoints" instance=ExtResource("4_h77tr")]
-position = Vector2(7127, 475)
+position = Vector2(10146, 283)
+
+[node name="checkpoint2" parent="platform/checkpoints" instance=ExtResource("4_h77tr")]
+position = Vector2(6360, 794)
 
 [node name="Trap" type="Node" parent="platform"]
 
@@ -329,7 +333,6 @@ spike_in_wait_time = 2.9
 [node name="MovablePlatform4" parent="platform/special_platform" instance=ExtResource("6_rjdwt")]
 position = Vector2(10339, 359)
 distance = 7150.0
-speed = 600.0
 
 [node name="checkpoint" parent="platform/special_platform" instance=ExtResource("4_h77tr")]
 position = Vector2(671, 473.99997)
@@ -477,13 +480,6 @@ speed = 15
 position = Vector2(17427, 806)
 speed = 15
 
-[node name="Ennemy76" parent="platform" instance=ExtResource("9_nbiuj")]
-position = Vector2(18377, 203)
-speed = 5
-max_health = 10
-limiteGauche = 500
-limiteDroite = 500
-
 [node name="Ennemy68" parent="platform" instance=ExtResource("9_nbiuj")]
 position = Vector2(14935, 812)
 speed = 15
@@ -507,6 +503,12 @@ speed = 15
 [node name="Ennemy75" parent="platform" instance=ExtResource("9_nbiuj")]
 position = Vector2(16933, 832)
 speed = 15
+
+[node name="Ennemy10" parent="platform" instance=ExtResource("11_b4rul")]
+position = Vector2(18377, 271)
+max_health = 20
+limiteGauche = 500
+limiteDroite = 500
 
 [node name="zonedie" parent="." instance=ExtResource("12_txb6e")]
 position = Vector2(1856, 6353)
