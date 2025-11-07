@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=4 uid="uid://d2u7hf7wpifj4"]
+[gd_scene load_steps=23 format=4 uid="uid://d2u7hf7wpifj4"]
 
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_aidxx"]
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_et0dr"]
 [ext_resource type="Texture2D" uid="uid://d38sa0hsegge7" path="res://Tilemap/plateforme.png" id="2_bt2y8"]
+[ext_resource type="PackedScene" uid="uid://byyk1ebx13sqh" path="res://Game/doors/door.tscn" id="3_1e7cw"]
 [ext_resource type="PackedScene" uid="uid://6bhetbv0xkkx" path="res://Game/checkpoint/checkpoint.tscn" id="5_4ox3k"]
 [ext_resource type="PackedScene" uid="uid://mr76owxq6swr" path="res://Plateforme/MovablePlatform/movablePlatform.tscn" id="5_h254a"]
 [ext_resource type="PackedScene" uid="uid://lp454xjcvc3m" path="res://Plateforme/BreakablePlatform/BreakablePlatform.tscn" id="6_kg07x"]
@@ -17,12 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://dn2ilbcddxgga" path="res://Game/Weapons/laser_pistol/Inventory/Bullet_on_field.tscn" id="14_um3nv"]
 [ext_resource type="AudioStream" uid="uid://cudgrgod24vmy" path="res://Assets/Sound/Mission Impossible Flute Aedan.mp3" id="15_28ujw"]
 
-[sub_resource type="Gradient" id="Gradient_28ujw"]
+[sub_resource type="Gradient" id="Gradient_oe25v"]
 offsets = PackedFloat32Array(0, 0.65090907, 0.90909094)
 colors = PackedColorArray(0, 0.7529412, 0.91764706, 1, 0.3861333, 0.84254116, 0.96244705, 1, 0.70980394, 0.91764706, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_h254a"]
-gradient = SubResource("Gradient_28ujw")
+gradient = SubResource("Gradient_oe25v")
 fill_from = Vector2(0.7008547, 0)
 fill_to = Vector2(0.7008547, 0.16239317)
 
@@ -77,6 +78,11 @@ expand_mode = 1
 position = Vector2(492, 375)
 tile_map_data = PackedByteArray("AACJAPH/FAADAAAAAACFAPf/FAAFAAAAAAB3AP//FAACAAAAAACAAP//FAADAAAAAAAiAPj/FAADAAAAAAAgAPj/FAANAAAAAAAeAPj/FAAEAAAAAAACAAAAFAAEAAAAAAAFAAAAFAACAAAAAABPAPj/FAAGAAEAAABPAPf/FAAGAAAAAAD+/wAAFAANAAAAAAA1APj/FAAGAAEAAAA1APf/FAAGAAAAAAD+//v/FAAAAAAAAAD///v/FAABAAAAAAADAPz/FAAAAAAAAAAEAPz/FAABAAAAAAAIAPr/FAAAAAAAAAAJAPr/FAABAAAAAAAMAPz/FAAAAAAAAAANAPz/FAABAAAAAAAPAPv/FAAAAAAAAAAQAPv/FAABAAAAAAAVAPv/FAAAAAAAAAAWAPv/FAABAAAAAAASAPj/FAAAAAAAAAATAPj/FAABAAAAAAAVAPX/FAAAAAAAAAAWAPX/FAABAAAAAAAcAPT/FAAAAAAAAAAdAPT/FAABAAAAAAAiAPP/FAAAAAAAAAAjAPP/FAABAAAAAAAlAPb/FAAAAAAAAAAmAPb/FAABAAAAAAAqAPP/FAAAAAAAAAArAPP/FAABAAAAAAAuAPT/FAAAAAAAAAAvAPT/FAABAAAAAAA0APP/FAAAAAAAAAA1APP/FAABAAAAAAA5APH/FAAAAAAAAAA6APH/FAABAAAAAAA+APT/FAAAAAAAAAA/APT/FAABAAAAAABDAPL/FAAAAAAAAABEAPL/FAABAAAAAABKAPD/FAAAAAAAAABLAPD/FAABAAAAAABPAPH/FAAAAAAAAABQAPH/FAABAAAAAABYAO//FAAAAAAAAABZAO//FAABAAAAAABgAO3/FAAAAAAAAABhAO3/FAABAAAAAABnAOr/FAAAAAAAAABoAOr/FAABAAAAAABbAOz/FAAAAAAAAABcAOz/FAABAAAAAAA1AAcAFAALAAAAAAD6//3/FAAAAAAAAAD7//3/FAABAAAAAAD5//n/FAAAAAAAAAD6//n/FAABAAAAAAABAPn/FAAAAAAAAAACAPn/FAABAAAAAAD2/wAAFAAAAAAAAAD3/wAAFAABAAAAAADz//z/FAAAAAAAAAD0//z/FAABAAAAAAD2//v/FAAAAAAAAAD3//v/FAABAAAAAAA5APX/FAAIAAAAAAA6APX/FAAJAAAAAAA=")
 tile_set = SubResource("TileSet_rr6q1")
+
+[node name="Door" parent="." instance=ExtResource("3_1e7cw")]
+position = Vector2(10061, 1814)
+next_level = "res://Game/MiniWorld/world3.tscn"
+first_checkpoint = Vector2(671, 474)
 
 [node name="Player" parent="." instance=ExtResource("1_aidxx")]
 position = Vector2(596, 327)
@@ -300,10 +306,10 @@ axe = "y"
 speed = 400.0
 
 [node name="BreakablePlatform" parent="platform/special_platform" instance=ExtResource("6_kg07x")]
-position = Vector2(3307, 274)
+position = Vector2(3307, 277)
 
 [node name="BreakablePlatform2" parent="platform/special_platform" instance=ExtResource("6_kg07x")]
-position = Vector2(2858, 593)
+position = Vector2(2858, 596)
 
 [node name="MovablePlatform8" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(6826, -493)
@@ -379,18 +385,18 @@ spike_in_wait_time = 0.1
 is_movable = false
 
 [node name="BreakablePlatform3" parent="platform/special_platform" instance=ExtResource("6_kg07x")]
-position = Vector2(9451, -494)
+position = Vector2(9451, -491)
 
 [node name="BreakablePlatform4" parent="platform/special_platform" instance=ExtResource("6_kg07x")]
-position = Vector2(9194, -109)
+position = Vector2(9194, -106)
 time_before_destroy = 0.3
 
 [node name="BreakablePlatform5" parent="platform/special_platform" instance=ExtResource("6_kg07x")]
-position = Vector2(7978, 403)
+position = Vector2(7978, 406)
 time_before_destroy = 0.3
 
 [node name="BreakablePlatform6" parent="platform/special_platform" instance=ExtResource("6_kg07x")]
-position = Vector2(9452, 1875)
+position = Vector2(9452, 1878)
 time_before_destroy = 0.8
 
 [node name="MovablePlatform10" parent="platform/special_platform" instance=ExtResource("5_h254a")]

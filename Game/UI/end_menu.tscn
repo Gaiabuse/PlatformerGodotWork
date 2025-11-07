@@ -1,21 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://beo3da2ns2cav"]
+[gd_scene load_steps=7 format=3 uid="uid://c6b1aakfd7q1j"]
 
-[ext_resource type="Script" uid="uid://blul47fm68j20" path="res://Game/UI/pause_menu.gd" id="1_k4gmp"]
+[ext_resource type="Texture2D" uid="uid://b7koqn5gtqdlr" path="res://Assets/Default/fond_menu.png" id="1_h4lyu"]
 
-[sub_resource type="FontFile" id="FontFile_i2ili"]
+[sub_resource type="GDScript" id="GDScript_12oww"]
+script/source = "extends Control
+
+func _on_main_menu_button_button_up() -> void:
+	get_tree().change_scene_to_file(\"res://Game/Menu/StartMenu.tscn\")
+"
+
+[sub_resource type="FontFile" id="FontFile_h2hj6"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-cache/0/46/0/ascent = 0.0
-cache/0/46/0/descent = 0.0
-cache/0/46/0/underline_position = 0.0
-cache/0/46/0/underline_thickness = 0.0
-cache/0/46/0/scale = 1.0
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/46/0/ascent = 0.0
+cache/0/46/0/descent = 0.0
+cache/0/46/0/underline_position = 0.0
+cache/0/46/0/underline_thickness = 0.0
+cache/0/46/0/scale = 1.0
 cache/0/47/0/ascent = 0.0
 cache/0/47/0/descent = 0.0
 cache/0/47/0/underline_position = 0.0
@@ -112,7 +119,7 @@ cache/0/33/0/underline_position = 0.0
 cache/0/33/0/underline_thickness = 0.0
 cache/0/33/0/scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyvts"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4lyu"]
 bg_color = Color(0.0627451, 0.6, 0.6, 1)
 border_width_left = 5
 border_width_top = 5
@@ -124,7 +131,7 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lstfa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12oww"]
 bg_color = Color(1, 0, 0.25882354, 0.972549)
 border_width_left = 5
 border_width_top = 5
@@ -136,7 +143,7 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7weu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd8fq"]
 bg_color = Color(0.5176471, 0.49019608, 0, 1)
 border_width_left = 5
 border_width_top = 5
@@ -148,40 +155,20 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[node name="pause_menu" type="Control"]
+[node name="end_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k4gmp")
+script = SubResource("GDScript_12oww")
 
-[node name="PlayButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -168.0
-offset_top = -6.0
-offset_right = 170.0
-offset_bottom = 94.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8745098, 0, 0.8745098, 1)
-theme_override_colors/font_pressed_color = Color(0.8745098, 0, 0.8745098, 1)
-theme_override_colors/font_hover_color = Color(0.8745098, 0, 0.8745098, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = SubResource("FontFile_i2ili")
-theme_override_font_sizes/font_size = 52
-theme_override_styles/normal = SubResource("StyleBoxFlat_tyvts")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lstfa")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t7weu")
-action_mode = 0
-text = "re jouer a le jeu"
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_h4lyu")
 
 [node name="MainMenuButton" type="Button" parent="."]
 layout_mode = 1
@@ -190,10 +177,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -168.0
-offset_top = 134.0
-offset_right = 170.0
-offset_bottom = 234.0
+offset_left = -426.0
+offset_top = 90.0
+offset_right = 429.0
+offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8745098, 0, 0.8745098, 1)
@@ -201,11 +188,11 @@ theme_override_colors/font_pressed_color = Color(0.8745098, 0, 0.8745098, 1)
 theme_override_colors/font_hover_color = Color(0.8745098, 0, 0.8745098, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_constants/outline_size = 15
-theme_override_fonts/font = SubResource("FontFile_i2ili")
+theme_override_fonts/font = SubResource("FontFile_h2hj6")
 theme_override_font_sizes/font_size = 52
-theme_override_styles/normal = SubResource("StyleBoxFlat_tyvts")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lstfa")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t7weu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4lyu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_12oww")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dd8fq")
 action_mode = 0
 text = "le menu du debut que le jeu se lance
 "
@@ -216,19 +203,18 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -576.0
-offset_top = 52.0
-offset_right = 561.5842
-offset_bottom = 155.0
+offset_right = 561.0
+offset_bottom = 315.0
 grow_horizontal = 2
 scale = Vector2(1.0126722, 0.97276515)
 theme_override_colors/font_color = Color(0.99607843, 0, 0.33333334, 1)
 theme_override_colors/font_outline_color = Color(0, 0.5647059, 0.5568628, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 75
-text = "pauze"
+text = "t'as gagné bravo tu es vraiment
+trop fort gg à toi
+pour la perf de zinzin"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="button_up" from="PlayButton" to="." method="_on_start_button_button_up"]
-[connection signal="button_up" from="PlayButton" to="." method="_on_play_button_button_up"]
 [connection signal="button_up" from="MainMenuButton" to="." method="_on_main_menu_button_button_up"]
