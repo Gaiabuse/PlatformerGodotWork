@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://kvms4l3p5lvm"]
+[gd_scene load_steps=22 format=4 uid="uid://kvms4l3p5lvm"]
 
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_02jna"]
 [ext_resource type="Texture2D" uid="uid://d38sa0hsegge7" path="res://Tilemap/plateforme.png" id="2_esd2q"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://6bhetbv0xkkx" path="res://Game/checkpoint/checkpoint.tscn" id="12_p07md"]
 [ext_resource type="PackedScene" uid="uid://dba55pdy5ohl5" path="res://Game/ZoneDie/zonedie.tscn" id="13_02jna"]
 [ext_resource type="PackedScene" uid="uid://yy8mavf8mbhy" path="res://Game/UI/game_ui.tscn" id="13_u24xg"]
+[ext_resource type="PackedScene" uid="uid://byyk1ebx13sqh" path="res://Game/doors/door.tscn" id="14_11qnq"]
 [ext_resource type="AudioStream" uid="uid://cudgrgod24vmy" path="res://Assets/Sound/Mission Impossible Flute Aedan.mp3" id="15_oprjo"]
 
 [sub_resource type="Gradient" id="Gradient_02jna"]
@@ -62,7 +63,7 @@ sources/20 = SubResource("TileSetAtlasSource_jsqj8")
 sources/21 = SubResource("TileSetAtlasSource_usgto")
 tile_proxies/coords_level = [[12, Vector2i(0, 0)], [20, Vector2i(0, 0)], [12, Vector2i(1, 0)], [20, Vector2i(1, 0)], [12, Vector2i(2, 0)], [20, Vector2i(2, 0)], [12, Vector2i(3, 0)], [20, Vector2i(3, 0)], [12, Vector2i(4, 0)], [20, Vector2i(4, 0)], [12, Vector2i(5, 0)], [20, Vector2i(5, 0)], [12, Vector2i(6, 0)], [20, Vector2i(6, 0)], [12, Vector2i(6, 1)], [20, Vector2i(6, 1)], [12, Vector2i(7, 0)], [20, Vector2i(7, 0)], [12, Vector2i(7, 1)], [20, Vector2i(7, 1)], [12, Vector2i(8, 0)], [20, Vector2i(8, 0)], [12, Vector2i(9, 0)], [20, Vector2i(9, 0)], [14, Vector2i(0, 0)], [20, Vector2i(10, 0)], [15, Vector2i(0, 0)], [20, Vector2i(11, 0)], [16, Vector2i(0, 0)], [20, Vector2i(12, 0)], [17, Vector2i(0, 0)], [20, Vector2i(13, 0)], [18, Vector2i(0, 0)], [20, Vector2i(14, 0)], [19, Vector2i(0, 0)], [20, Vector2i(15, 0)]]
 
-[node name="world_test2" type="Node2D"]
+[node name="world1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -1675.0
@@ -77,31 +78,43 @@ position = Vector2(492, 375)
 tile_map_data = PackedByteArray("AAAEAAAAFAACAAAAAAAMAP//FAAHAAAAAAAMAAAAFAAHAAEAAAAOAP//FAAGAAAAAAAOAAAAFAAGAAEAAAAvAP//FAAGAAAAAAAvAAAAFAAGAAEAAAA2AP//FAAHAAAAAAA2AAAAFAAHAAEAAAAzAP//FAAHAAAAAAAzAAAAFAAHAAEAAAA6AP//FAACAAAAAABJAAAAFAADAAAAAABEAP//FAAGAAAAAABEAAAAFAAGAAEAAABOAAgAFAAPAAAAAABXAAQAFAAOAAAAAAB+AAAAFAAPAAAAAAADAP3/FAAAAAAAAAAEAP3/FAABAAAAAAAPAPz/FAAAAAAAAAAQAPz/FAABAAAAAAAXAP3/FAAAAAAAAAAYAP3/FAABAAAAAAArAPr/FAAAAAAAAAAsAPr/FAABAAAAAAA3APz/FAAAAAAAAAA4APz/FAABAAAAAAA9APv/FAAAAAAAAAA+APv/FAABAAAAAABJAPr/FAAAAAAAAABKAPr/FAABAAAAAABUAP3/FAAAAAAAAABVAP3/FAABAAAAAABbAPz/FAAAAAAAAABcAPz/FAABAAAAAABnAPv/FAAAAAAAAABoAPv/FAABAAAAAABrAPz/FAAAAAAAAABsAPz/FAABAAAAAAB2APv/FAAAAAAAAAB3APv/FAABAAAAAAB8APz/FAAAAAAAAAB9APz/FAABAAAAAAByAP3/FAAIAAAAAABzAP3/FAAJAAAAAABuAPr/FAAIAAAAAABvAPr/FAAJAAAAAABjAPz/FAAIAAAAAABkAPz/FAAJAAAAAABeAPv/FAAIAAAAAABfAPv/FAAJAAAAAABWAPz/FAAIAAAAAABXAPz/FAAJAAAAAABFAPv/FAAIAAAAAABGAPv/FAAJAAAAAAAvAPv/FAAIAAAAAAAwAPv/FAAJAAAAAAAmAPv/FAAIAAAAAAAnAPv/FAAJAAAAAAAdAPz/FAAIAAAAAAAeAPz/FAAJAAAAAAAhAPv/FAAAAAAAAAAiAPv/FAABAAAAAAAJAPv/FAAIAAAAAAAKAPv/FAAJAAAAAAB+AP//FAAGAAAAAABOAAcAFAAGAAAAAAA=")
 tile_set = SubResource("TileSet_rr6q1")
 
+[node name="Door" parent="." instance=ExtResource("14_11qnq")]
+position = Vector2(8843, 406)
+next_level = "res://Game/MiniWorld/world2.tscn"
+
 [node name="Player" parent="." instance=ExtResource("3_2bq32")]
-position = Vector2(587, 378)
+position = Vector2(590, 368)
 collision_mask = 2
 max_health = 3
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Ennemy3" parent="Enemies" instance=ExtResource("4_uft2d")]
-position = Vector2(3720, 405)
-speed = 15
+position = Vector2(3737, 399)
+speed = 5
+max_health = 0
 
 [node name="Ennemy2" parent="Enemies" instance=ExtResource("5_kgyly")]
-position = Vector2(2761, 274)
+position = Vector2(3345, 277)
+limiteGauche = 1200
 
 [node name="Ennemy" parent="Enemies" instance=ExtResource("6_qm5c0")]
-position = Vector2(1298, 404)
+position = Vector2(1122, 396)
+speed = 8
+limiteDroite = 300
 
 [node name="Ennemy4" parent="Enemies" instance=ExtResource("7_t30ay")]
 position = Vector2(4931, 913)
+limiteDroite = 600
 
 [node name="Ennemy5" parent="Enemies" instance=ExtResource("7_t30ay")]
 position = Vector2(5273, 924)
+limiteGauche = 300
+limiteDroite = 300
 
 [node name="Ennemy6" parent="Enemies" instance=ExtResource("7_t30ay")]
 position = Vector2(5577, 907)
+limiteGauche = 600
 
 [node name="EnvironmentForeGround" type="TileMapLayer" parent="."]
 position = Vector2(492, 375)
@@ -148,12 +161,15 @@ position = Vector2(1677, 438)
 
 [node name="BreakablePlatform" parent="platform/special_platform" groups=["obstacles"] instance=ExtResource("11_xs8ih")]
 position = Vector2(2387, 435)
+time_before_destroy = 1.3
 
 [node name="BreakablePlatform2" parent="platform/special_platform" groups=["obstacles"] instance=ExtResource("11_xs8ih")]
 position = Vector2(2797, 435)
+time_before_destroy = 1.3
 
 [node name="BreakablePlatform3" parent="platform/special_platform" groups=["obstacles"] instance=ExtResource("11_xs8ih")]
 position = Vector2(3191, 435)
+time_before_destroy = 1.3
 
 [node name="MovablePlatform2" parent="platform/special_platform" instance=ExtResource("10_80r44")]
 position = Vector2(4518, 458)
@@ -205,6 +221,9 @@ scale = Vector2(213.56326, 159.41127)
 [node name="zonedie2" parent="platform" instance=ExtResource("13_02jna")]
 position = Vector2(10510, 12072)
 scale = Vector2(213.56326, 159.41127)
+
+[node name="checkpoint" parent="platform" instance=ExtResource("12_p07md")]
+position = Vector2(6220, 667)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
