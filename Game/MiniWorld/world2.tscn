@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bvfed6y4cl7q5"]
+[gd_scene load_steps=21 format=4 uid="uid://d2u7hf7wpifj4"]
 
 [ext_resource type="PackedScene" uid="uid://bu8q20n3uc28i" path="res://Game/Player/player.tscn" id="1_aidxx"]
 [ext_resource type="Texture2D" uid="uid://dp51c05gsh8bb" path="res://Tilemap/decor.png" id="1_et0dr"]
@@ -17,13 +17,13 @@
 [ext_resource type="AudioStream" uid="uid://cudgrgod24vmy" path="res://Assets/Sound/Mission Impossible Flute Aedan.mp3" id="15_28ujw"]
 
 [sub_resource type="Gradient" id="Gradient_u80xu"]
-offsets = PackedFloat32Array(0, 0.90909094)
-colors = PackedColorArray(0, 0.7529412, 0.91764706, 1, 0.70980394, 0.91764706, 1, 1)
+offsets = PackedFloat32Array(0, 0.65090907, 0.90909094)
+colors = PackedColorArray(0, 0.7529412, 0.91764706, 1, 0.3861333, 0.84254116, 0.96244705, 1, 0.70980394, 0.91764706, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_h254a"]
 gradient = SubResource("Gradient_u80xu")
-fill_from = Vector2(0.8333333, 0.30341882)
-fill_to = Vector2(0.82905984, 0.64102566)
+fill_from = Vector2(0.7008547, 0)
+fill_to = Vector2(0.7008547, 0.16239317)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsqj8"]
 texture = ExtResource("1_et0dr")
@@ -65,10 +65,10 @@ tile_proxies/coords_level = [[12, Vector2i(0, 0)], [20, Vector2i(0, 0)], [12, Ve
 [node name="world_test" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -1687.0
-offset_top = -1710.0
-offset_right = 11769.0
-offset_bottom = 2554.0
+offset_left = -1675.0
+offset_top = -1691.0
+offset_right = 11781.0
+offset_bottom = 14343.0
 texture = SubResource("GradientTexture2D_h254a")
 expand_mode = 1
 
@@ -78,7 +78,7 @@ tile_map_data = PackedByteArray("AACJAPH/FAADAAAAAACFAPf/FAAFAAAAAAB3AP//FAACAAA
 tile_set = SubResource("TileSet_rr6q1")
 
 [node name="Player" parent="." instance=ExtResource("1_aidxx")]
-position = Vector2(489, 369)
+position = Vector2(6478, -179)
 collision_mask = 2
 max_health = 3
 
@@ -111,6 +111,7 @@ position = Vector2(9857, 1817)
 [node name="Spike" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(5637, -2)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
@@ -124,126 +125,147 @@ spike_in_wait_time = 0.1
 [node name="Spike3" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(5838, -2)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike4" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(5938, -2)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike5" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(6038, -2)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike6" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(6138, -2)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike7" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(6238, -2)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike8" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(6338, -2)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike9" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(6438, -2)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike10" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(7888, 1025)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike11" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(7983, 1025)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike12" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(8077, 1025)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike16" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(8477, 446)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike17" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(8572, 446)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike19" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(8286, 446)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike21" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(8191, 446)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike20" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(8381, 446)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike18" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(8666, 446)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike13" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(9098, 704)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike14" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(9193, 704)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike15" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(9287, 704)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 
 [node name="Spike22" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(8608, 1024)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.5
 
 [node name="Spike23" parent="platform/Trap" instance=ExtResource("7_yoe77")]
 position = Vector2(9144, 1024)
 speed = 1000.0
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.5
 
@@ -256,13 +278,13 @@ speed = 300.0
 
 [node name="MovablePlatform2" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(1948, 466)
-distance = -300.0
-speed = 250.0
+distance = -350.0
+speed = 450.0
 
 [node name="MovablePlatform5" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(3114, 914)
 distance = 450.0
-speed = 300.0
+speed = 400.0
 
 [node name="MovablePlatform3" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(2239, -34)
@@ -285,31 +307,36 @@ position = Vector2(2858, 593)
 [node name="MovablePlatform8" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(6826, -493)
 distance = 450.0
+speed = 400.0
 
 [node name="MovablePlatform6" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(6763, 83)
 distance = 600.0
 axe = "y"
+speed = 400.0
 
 [node name="MovablePlatform7" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(7148, 683)
 distance = -1000.0
 axe = "y"
+speed = 400.0
 
 [node name="MovablePlatform9" parent="platform/special_platform" instance=ExtResource("5_h254a")]
 position = Vector2(7563, -654)
 rotation = -1.5707964
 distance = 1500.0
-speed = 1300.0
+speed = 850.0
 
 [node name="Spike" parent="platform/special_platform/MovablePlatform9" instance=ExtResource("7_yoe77")]
 position = Vector2(-65, -36)
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 is_movable = false
 
 [node name="Spike2" parent="platform/special_platform/MovablePlatform9" instance=ExtResource("7_yoe77")]
 position = Vector2(61, -36)
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 is_movable = false
@@ -317,6 +344,7 @@ is_movable = false
 [node name="Spike3" parent="platform/special_platform/MovablePlatform9" instance=ExtResource("7_yoe77")]
 position = Vector2(-65, 38)
 rotation = 3.1415927
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 is_movable = false
@@ -324,6 +352,7 @@ is_movable = false
 [node name="Spike4" parent="platform/special_platform/MovablePlatform9" instance=ExtResource("7_yoe77")]
 position = Vector2(60.999996, 38)
 rotation = 3.1415927
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 is_movable = false
@@ -336,12 +365,14 @@ speed = 1300.0
 
 [node name="Spike" parent="platform/special_platform/MovablePlatform15" instance=ExtResource("7_yoe77")]
 position = Vector2(-65, -36)
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 is_movable = false
 
 [node name="Spike2" parent="platform/special_platform/MovablePlatform15" instance=ExtResource("7_yoe77")]
 position = Vector2(61, -36)
+strength = 3
 spike_out_wait_time = 0.1
 spike_in_wait_time = 0.1
 is_movable = false
@@ -443,12 +474,6 @@ limiteDroite = 1000
 position = Vector2(5342, -304)
 speed = 5
 limiteGauche = 1000
-
-[node name="Ennemy8" parent="platform/enemies" instance=ExtResource("10_u80xu")]
-position = Vector2(7947, -495)
-speed = 5
-limiteGauche = 50
-limiteDroite = 50
 
 [node name="Ennemy11" parent="platform/enemies" instance=ExtResource("10_u80xu")]
 position = Vector2(8941, -173)
