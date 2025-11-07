@@ -11,13 +11,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_segth"]
 size = Vector2(39, 61)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "anchor")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "anchor", "jump_timer")]
 script = ExtResource("1_s3asc")
 camera = NodePath("Camera2D")
 max_health = 100
 anchor = NodePath("EpeeAnchor/origin")
 epee_scene = ExtResource("2_vytja")
 laserpistol_scene = ExtResource("3_segth")
+jump_timer = NodePath("can_jump_timer")
 metadata/_custom_type_script = "uid://bxc44824lcx63"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -46,3 +47,9 @@ stream = ExtResource("6_p2hw7")
 
 [node name="JumpPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ch4ko")
+
+[node name="can_jump_timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="can_jump_timer" to="." method="_on_can_jump_timer_timeout"]

@@ -4,36 +4,36 @@
 [ext_resource type="Script" uid="uid://m0kt7bdm3qyo" path="res://Plateforme/BreakablePlatform/breakable_platform.gd" id="1_tlpgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlpgo"]
-size = Vector2(265, 61)
+size = Vector2(265, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwpb"]
-size = Vector2(262, 98)
+size = Vector2(262, 108)
 
 [sub_resource type="Animation" id="Animation_7lwpb"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
+tracks/1/path = NodePath("TileDiagonal:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_fgj66"]
@@ -53,19 +53,19 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_tlpgo"]
 resource_name = "tremblement"
-length = 0.5
+length = 0.05
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("TileDiagonal:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
-"transitions": PackedFloat32Array(1, 1.7411014, 1, 1.7411014, 1, 1.7411014, 1, 1.7411014, 1, 1.7411014, 1),
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1.7411019),
 "update": 0,
-"values": [0.0, -0.01745329251994329, 0.01745329251994329, -0.01745329251994329, 0.01745329251994329, -0.01745329251994329, 0.01745329251994329, -0.01745329251994329, 0.01745329251994329, -0.01745329251994329, 0.01745329251994329]
+"values": [-0.017453292519943295, 0.017453292519943295]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqaof"]
@@ -76,7 +76,6 @@ _data = {
 }
 
 [node name="BreakablePlatform" type="StaticBody2D" node_paths=PackedStringArray("_cooldown", "animation")]
-physics_interpolation_mode = 2
 collision_layer = 2
 script = ExtResource("1_tlpgo")
 _cooldown = NodePath("Timer")
@@ -89,14 +88,14 @@ region_enabled = true
 region_rect = Rect2(-131.445, 0, 263.8, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -0.5)
+position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_tlpgo")
 
 [node name="Area2D" type="Area2D" parent="." groups=["obstacles"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -13)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_7lwpb")
 debug_color = Color(0.9529412, 0, 0.54901963, 0.06666667)
 
